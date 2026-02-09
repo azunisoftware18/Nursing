@@ -10,7 +10,7 @@ export default defineConfig({
     host: true,
     port: 3000,
     allowedHosts: [
-      'jwokgk8c00csoko44ks444sw.147.93.20.127.sslip.io'
+      'all'
     ]
   }
 })
