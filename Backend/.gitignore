@@ -1,0 +1,11 @@
+my_api_keys.txt
+
+*.log
+*.class
+
+vendor/
+node_modules/
+
+*.html
+!important.html
+.env

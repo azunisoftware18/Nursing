@@ -1,0 +1,1 @@
+ALTER TABLE `leads` ADD `message` varchar(500);
