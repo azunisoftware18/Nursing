@@ -1,5 +1,4 @@
-# ---------- Build Stage ----------
-FROM node:20-alpine AS builder
+FROM node:20-alpine
 
 WORKDIR /app
 
@@ -8,16 +7,11 @@ RUN npm install
 
 COPY . .
 
+# Build app
 RUN npm run build
 
+# Expose preview port
+EXPOSE 4173
 
-# ---------- Production Stage ----------
-FROM nginx:alpine
-
-RUN rm -rf /usr/share/nginx/html/*
-
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+# Run preview server
+CMD ["npm", "run", "preview", "--", "--host"]
