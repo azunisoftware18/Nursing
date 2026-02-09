@@ -1,1 +1,0 @@
-ALTER TABLE `colleges` ADD `course_ids` json DEFAULT (JSON_ARRAY());

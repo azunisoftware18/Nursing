@@ -1,1 +1,0 @@
-ALTER TABLE `courses` ADD `college_id` varchar(36) NOT NULL;
