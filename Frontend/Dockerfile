@@ -7,11 +7,8 @@ RUN npm install
 
 COPY . .
 
-# Build app
 RUN npm run build
 
-# Expose preview port
-EXPOSE 4173
+EXPOSE 3000
 
-# Run preview server
-CMD ["npm", "run", "preview", "--", "--host"]
+CMD ["npm", "run", "preview", "--", "--host", "--port", "3000"]
