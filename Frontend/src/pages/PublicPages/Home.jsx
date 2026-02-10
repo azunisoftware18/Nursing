@@ -78,7 +78,7 @@ function Home() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] sm:w-[350px] lg:w-[450px] h-[200px] sm:h-[350px] lg:h-[450px] bg-purple-100 rounded-full blur-3xl opacity-40"></div>
 
           <img
-            src="/public/doctor01.png"
+            src="/doctor01.png"
             alt="Nursing Professional"
             className="relative z-10 h-full w-auto object-contain 
   max-h-[40vh] sm:max-h-[50vh] lg:max-h-[85vh]
