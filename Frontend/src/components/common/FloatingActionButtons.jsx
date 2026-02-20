@@ -6,7 +6,7 @@ const FloatingActionButtons = () => {
   // Modal ki state
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const phoneNumber = "918233317530";
+  const phoneNumber = "911111111111";
   const whatsappMessage = "Hello, I am interested in Nursing Admission.";
 
   return (
