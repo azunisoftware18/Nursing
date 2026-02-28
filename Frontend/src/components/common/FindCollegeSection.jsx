@@ -96,7 +96,7 @@ const FindCollegeSection = () => {
         {/* Right Illustration - Hidden on mobile/tablet */}
         <div className="absolute right-0 bottom-0 hidden xl:block w-72 translate-x-[15%]">
           <img
-            src="/college02.png"
+            src="/College02.png"
             alt="Student studying"
             className="w-full h-auto opacity-80"
           />
