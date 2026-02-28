@@ -156,7 +156,7 @@ function BlogModal({ isOpen, onClose, onSubmit, editingBlog, isLoading }) {
             <button
               type="submit"
               disabled={isLoading}
-              className="flex-[2] bg-[#1a237e] hover:bg-[#283593] text-white px-4 py-2.5 rounded-xl font-semibold shadow-lg shadow-indigo-200 transition-all flex items-center justify-center gap-2 disabled:opacity-70"
+              className="flex-1 px-4 py-3 bg-[#6739b7] text-white rounded-xl font-bold hover:bg-[#5a32a3] shadow-lg disabled:opacity-50 flex justify-center items-center"
             >
               {isLoading ? (
                 <>

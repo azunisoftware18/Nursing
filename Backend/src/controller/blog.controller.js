@@ -48,7 +48,21 @@ export const addBlog = async (req, res) => {
 export const getAllBlogs = async (req, res) => {
   try {
     const blogs = await getBlogs();
-    res.json({ success: true, data: blogs });
+
+    if (!blogs || blogs.length === 0) {
+      return res.json({
+        success: true,
+        message: "No blogs available",
+        data: [],
+      });
+    }
+
+    res.json({
+      success: true,
+      message: "Blogs fetched successfully",
+      data: blogs,
+    });
+
   } catch (error) {
     res.status(500).json({
       success: false,
@@ -81,7 +95,7 @@ export const updateBlog = async (req, res) => {
       userAgent: req.headers["user-agent"],
     });
 
-    res.json({ success: true, message: "Blog updated" });
+    res.json({ success: true, message: "Blog updated successfully" });
   } catch (error) {
     console.error("UPDATE BLOG ERROR:", error);
 

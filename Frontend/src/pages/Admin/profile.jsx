@@ -12,6 +12,7 @@ import {
   AtSign,
 } from "lucide-react";
 import { useMe, useUpdateMe } from "../../hooks/useUser";
+import toast from "react-hot-toast";
 
 const ProfileInput = ({ label, icon: Icon, isEditing, ...props }) => (
   <div className="space-y-1.5">
@@ -34,6 +35,7 @@ const Profile = () => {
 
   const [isEditing, setIsEditing] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [showCurrentPassword, setShowCurrentPassword] = useState(false);
   const [tempData, setTempData] = useState(null);
 
   useEffect(() => {
@@ -43,6 +45,7 @@ const Profile = () => {
         lastName: user.lastName || "",
         username: user.username || "",
         email: user.email || "",
+        currentPassword: "",
         password: "",
       });
     }
@@ -50,21 +53,33 @@ const Profile = () => {
 
   const handleUpdate = (e) => {
     e.preventDefault();
+
     const payload = {
       firstName: tempData.firstName,
       lastName: tempData.lastName,
       username: tempData.username,
       email: tempData.email,
+      currentPassword: tempData.currentPassword,
     };
 
     if (tempData.password) {
-      payload.password = tempData.password;
+      payload.newPassword = tempData.password;
     }
 
     updateMutation.mutate(payload, {
-      onSuccess: () => {
+      onSuccess: (res) => {
+        toast.success(res?.message);
         setIsEditing(false);
-        setTempData({ ...tempData, password: "" });
+        setTempData({
+          ...tempData,
+          password: "",
+          currentPassword: "",
+        });
+      },
+      onError: (error) => {
+        toast.error(
+          error?.response?.data?.message || "Something went wrong"
+        );
       },
     });
   };
@@ -124,6 +139,7 @@ const Profile = () => {
                     username: user.username,
                     email: user.email,
                     password: "",
+                    currentPassword: "",
                   });
                 }}
                 className="p-2 text-gray-400 hover:bg-red-50 hover:text-red-500 rounded-full transition-all"
@@ -174,6 +190,36 @@ const Profile = () => {
 
               {/* Password Field */}
               <div className="md:col-span-2 space-y-1.5 relative">
+                {/* Current Password Field */}
+                {isEditing && (
+                  <div className="md:col-span-2 space-y-1.5">
+                    <label className="text-sm font-bold text-gray-700 ml-1 flex items-center gap-2">
+                      <Lock size={14} className="text-[#6739b7]" />
+                      Current Password *
+                    </label>
+
+                    <div className="relative">
+                      <input
+                        type={showCurrentPassword ? "text" : "password"}
+                        required
+                        value={tempData.currentPassword}
+                        onChange={(e) =>
+                          setTempData({ ...tempData, currentPassword: e.target.value })
+                        }
+                        placeholder="Enter your current password"
+                        className="w-full px-4 py-3 rounded-xl border border-purple-200 bg-white focus:ring-2 focus:ring-purple-500 shadow-sm pr-12"
+                      />
+
+                      <button
+                        type="button"
+                        onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+                        className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#6739b7]"
+                      >
+                        {showCurrentPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                      </button>
+                    </div>
+                  </div>
+                )}
                 <label className="text-sm font-bold text-gray-700 ml-1 flex items-center gap-2">
                   <Lock size={14} className="text-[#6739b7]" />
                   {isEditing ? "New Password (Leave blank to keep current)" : "Password"}
@@ -228,11 +274,11 @@ const Profile = () => {
         </div>
 
         {/* Footer Security Badge */}
-        <div className="bg-gray-50 p-6 flex justify-center border-t border-gray-100">
+        {/* <div className="bg-gray-50 p-6 flex justify-center border-t border-gray-100">
           <div className="flex items-center gap-2 text-xs font-semibold text-gray-400 uppercase tracking-widest">
             <ShieldCheck size={14} /> 256-bit Secure Encryption
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

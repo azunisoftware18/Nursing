@@ -26,13 +26,13 @@ export const useAddCollege = () => {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: (formData) =>
-      api.post("/college", formData, {
-
-      }),
+    mutationFn: async (formData) => {
+      const res = await api.post("/college", formData);
+      return res.data; 
+    },
 
     onSuccess: () => {
-      queryClient.invalidateQueries(["colleges"]);
+      queryClient.invalidateQueries({ queryKey: ["colleges"] });
     },
   });
 };
@@ -41,11 +41,13 @@ export const useUpdateCollege = () => {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: ({ id, data }) =>
-      api.put(`/college/${id}`, data),
+    mutationFn: async ({ id, data }) => {
+      const res = await api.put(`/college/${id}`, data);
+      return res.data;
+    },
 
     onSuccess: () => {
-      queryClient.invalidateQueries(["colleges"]);
+      queryClient.invalidateQueries({ queryKey: ["colleges"] });
     },
   });
 };
@@ -54,10 +56,13 @@ export const useDeleteCollege = () => {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: (id) => api.delete(`/college/${id}`),
+    mutationFn: async (id) => {
+      const res = await api.delete(`/college/${id}`);
+      return res.data;
+    },
 
     onSuccess: () => {
-      queryClient.invalidateQueries(["colleges"]);
+      queryClient.invalidateQueries({ queryKey: ["colleges"] });
     },
   });
 };

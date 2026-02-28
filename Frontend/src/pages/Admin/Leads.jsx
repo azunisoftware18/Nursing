@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useQuery } from "@tanstack/react-query"; // Assuming you use react-query
+import { useQuery } from "@tanstack/react-query";
 import {
   Mail,
   Phone,
@@ -56,12 +56,12 @@ function Leads() {
   });
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
+    <div className="p-4 sm:p-6 bg-gray-50 min-h-screen">
       {/* Header Section */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 sm:mb-8 gap-4">
         <div>
-          <h1 className="text-2xl font-black text-[#1a237e]">Student Leads</h1>
-          <p className="text-sm text-gray-500 font-medium">
+          <h1 className="text-xl sm:text-2xl font-black text-[#1a237e]">Student Leads</h1>
+          <p className="text-xs sm:text-sm text-gray-500 font-medium">
             Manage and track all incoming enquiries
           </p>
         </div>
@@ -80,9 +80,9 @@ function Leads() {
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
-          <button className="p-2.5 bg-white border border-gray-200 rounded-xl text-gray-600 hover:bg-gray-50 transition-all shadow-sm">
+          {/* <button className="p-2.5 bg-white border border-gray-200 rounded-xl text-gray-600 hover:bg-gray-50 transition-all shadow-sm flex-shrink-0">
             <Filter size={20} />
-          </button>
+          </button> */}
         </div>
       </div>
 
@@ -90,99 +90,154 @@ function Leads() {
       <div className="bg-white rounded-[1.5rem] shadow-sm border border-gray-100 overflow-hidden flex flex-col min-h-[500px]">
 
         {isLoading ? (
-          <div className="flex flex-col items-center justify-center p-20 gap-3">
+          <div className="flex flex-col items-center justify-center p-10 sm:p-20 gap-3">
             <Loader2 className="animate-spin text-[#6739b7]" size={32} />
-            <span className="text-gray-400 font-medium">
+            <span className="text-gray-400 font-medium text-sm sm:text-base">
               Fetching enquiries...
             </span>
           </div>
         ) : (
-          <div className="overflow-x-auto flex-1">
-            <table className="w-full text-left border-collapse">
-              <thead className="bg-gray-50/50 border-b border-gray-100">
-                <tr>
-                  <th className="px-6 py-4 text-[11px] font-bold text-gray-400 uppercase tracking-wider">
-                    Student Details
-                  </th>
-                  <th className="px-6 py-4 text-[11px] font-bold text-gray-400 uppercase tracking-wider">
-                    Enquiry For
-                  </th>
-                  <th className="px-6 py-4 text-[11px] font-bold text-gray-400 uppercase tracking-wider">
-                    Location
-                  </th>
-                  <th className="px-6 py-4 text-[11px] font-bold text-gray-400 uppercase tracking-wider">
-                    Date
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-50">
-                {paginatedLeads?.map((lead) => (
-                  <tr
-                    key={lead.id}
-                    className="hover:bg-gray-50/50 transition-colors group"
-                  >
-                    <td className="px-6 py-4">
-                      <div className="flex flex-col">
-                        <span className="font-bold text-gray-800 text-sm">
-                          {lead.name}
-                        </span>
-                        <div className="flex items-center gap-3 mt-1">
-                          <span className="flex items-center gap-1 text-[12px] text-gray-500">
-                            <Phone size={12} /> {lead.phone}
+          <>
+            {/* Mobile View - Card Layout */}
+            <div className="block sm:hidden">
+              {paginatedLeads?.map((lead) => (
+                <div key={lead.id} className="p-4 border-b border-gray-100 hover:bg-gray-50/50">
+                  {/* Student Details */}
+                  <div className="mb-3">
+                    <span className="font-bold text-gray-800 text-base block mb-2">
+                      {lead.name}
+                    </span>
+                    <div className="flex flex-col gap-2">
+                      <span className="flex items-center gap-2 text-xs text-gray-600">
+                        <Phone size={14} className="text-gray-400 flex-shrink-0" />
+                        <span className="truncate">{lead.phone}</span>
+                      </span>
+                      <span className="flex items-center gap-2 text-xs text-gray-600">
+                        <Mail size={14} className="text-gray-400 flex-shrink-0" />
+                        <span className="truncate">{lead.email || "N/A"}</span>
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Enquiry Details */}
+                  <div className="bg-gray-50/50 rounded-xl p-3 mb-3">
+                    <div className="flex flex-col gap-2">
+                      <span className="flex items-center gap-2 text-xs font-bold text-[#6739b7]">
+                        <BookOpen size={14} className="flex-shrink-0" />
+                        <span className="truncate">{courseMap[lead.course] || "Not Specified"}</span>
+                      </span>
+                      <span className="flex items-center gap-2 text-xs text-gray-600">
+                        <School size={14} className="flex-shrink-0" />
+                        <span className="truncate">{collegeMap[lead.college] || "Not Specified"}</span>
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Location and Date */}
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div className="flex items-center gap-2 text-xs text-gray-600 font-medium">
+                      <MapPin size={14} className="text-gray-400 flex-shrink-0" />
+                      <span className="truncate max-w-[150px]">{lead.city}, {lead.state}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs text-gray-400">
+                      <Calendar size={14} className="flex-shrink-0" />
+                      <span>{new Date(lead.createdAt).toLocaleDateString()}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Desktop View - Table Layout */}
+            <div className="hidden sm:block overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead className="bg-gray-50/50 border-b border-gray-100">
+                  <tr>
+                    <th className="px-6 py-4 text-[11px] font-bold text-gray-400 uppercase tracking-wider">
+                      Student Details
+                    </th>
+                    <th className="px-6 py-4 text-[11px] font-bold text-gray-400 uppercase tracking-wider">
+                      Enquiry For
+                    </th>
+                    <th className="px-6 py-4 text-[11px] font-bold text-gray-400 uppercase tracking-wider">
+                      Location
+                    </th>
+                    <th className="px-6 py-4 text-[11px] font-bold text-gray-400 uppercase tracking-wider">
+                      Date
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-50">
+                  {paginatedLeads?.map((lead) => (
+                    <tr
+                      key={lead.id}
+                      className="hover:bg-gray-50/50 transition-colors group"
+                    >
+                      <td className="px-6 py-4">
+                        <div className="flex flex-col">
+                          <span className="font-bold text-gray-800 text-sm">
+                            {lead.name}
                           </span>
-                          <span className="flex items-center gap-1 text-[12px] text-gray-500">
-                            <Mail size={12} /> {lead.email || "N/A"}
+                          <div className="flex items-center gap-3 mt-1">
+                            <span className="flex items-center gap-1 text-[12px] text-gray-500">
+                              <Phone size={12} /> {lead.phone}
+                            </span>
+                            <span className="flex items-center gap-1 text-[12px] text-gray-500">
+                              <Mail size={12} /> {lead.email || "N/A"}
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4">
+                        <div className="flex flex-col gap-1">
+                          <span className="flex items-center gap-1.5 text-xs font-bold text-[#6739b7]">
+                            <BookOpen size={14} />{" "}
+                            {courseMap[lead.course] || "Not Specified"}
+                          </span>
+                          <span className="flex items-center gap-1.5 text-xs text-gray-600">
+                            <School size={14} />{" "}
+                            {collegeMap[lead.college] || "Not Specified"}
                           </span>
                         </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4">
-                      <div className="flex flex-col gap-1">
-                        <span className="flex items-center gap-1.5 text-xs font-bold text-[#6739b7]">
-                          <BookOpen size={14} />{" "}
-                          {courseMap[lead.course] || "Not Specified"}
-                        </span>
-                        <span className="flex items-center gap-1.5 text-xs text-gray-600">
-                          <School size={14} />{" "}
-                          {collegeMap[lead.college] || "Not Specified"}
-                        </span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4">
-                      <div className="flex items-center gap-1.5 text-xs text-gray-600 font-medium">
-                        <MapPin size={14} className="text-gray-400" />
-                        {lead.city}, {lead.state}
-                      </div>
-                    </td>
-                    <td className="px-6 py-4">
-                      <div className="flex items-center gap-1.5 text-xs text-gray-400">
-                        <Calendar size={14} />
-                        {new Date(lead.createdAt).toLocaleDateString()}
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                      </td>
+                      <td className="px-6 py-4">
+                        <div className="flex items-center gap-1.5 text-xs text-gray-600 font-medium truncate max-w-[150px]">
+                          <MapPin size={14} className="text-gray-400 flex-shrink-0" />
+                          {lead.city}, {lead.state}
+                        </div>
+                      </td>
+                      <td className="px-6 py-4">
+                        <div className="flex items-center gap-1.5 text-xs text-gray-400">
+                          <Calendar size={14} className="flex-shrink-0" />
+                          {new Date(lead.createdAt).toLocaleDateString()}
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
 
-
-            {leads?.data?.length === 0 && (
-              <div className="p-20 text-center text-gray-400">
+            {(!leads?.data || leads.data.length === 0) && (
+              <div className="py-10 sm:py-20 text-center text-gray-400 font-medium px-4">
                 No leads found.
               </div>
             )}
-          </div>
+          </>
         )}
       </div>
+
       {totalPages > 1 && (
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={(page) => {
-            setCurrentPage(page);
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
-        />
+        <div className="mt-6">
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={(page) => {
+              setCurrentPage(page);
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          />
+        </div>
       )}
     </div>
   );

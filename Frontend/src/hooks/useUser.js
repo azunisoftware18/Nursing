@@ -16,10 +16,12 @@ export const useUpdateMe = () => {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: (data) => api.put("/user/me", data),
+    mutationFn: async (data) => {
+      const res = await api.put("/user/me", data);
+      return res.data;
+    },
     onSuccess: () => {
-      toast.success("Profile updated successfully");
-      queryClient.invalidateQueries(["me"]);
+      queryClient.invalidateQueries({ queryKey: ["me"] });
     },
   });
 };

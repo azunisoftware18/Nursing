@@ -33,18 +33,24 @@ function AdminBlog() {
           data: formData,
         },
         {
-          onSuccess: () => {
-            toast.success("Blog updated successfully");
+          onSuccess: (res) => {
+            toast.success(res.message);
             setIsModalOpen(false);
             setEditingBlog(null);
+          },
+          onError: (error) => {
+            toast.error(error.response?.data?.message);
           },
         }
       );
     } else {
       addMutation.mutate(formData, {
-        onSuccess: () => {
-          toast.success("Blog added successfully");
+        onSuccess: (res) => {
+          toast.success(res.message);
           setIsModalOpen(false);
+        },
+        onError: (error) => {
+          toast.error(error.response?.data?.message);
         },
       });
     }
@@ -53,7 +59,12 @@ function AdminBlog() {
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this blog post?")) {
       deleteMutation.mutate(id, {
-        onSuccess: () => toast.success("Blog deleted successfully"),
+        onSuccess: (res) => {
+          toast.success(res.message);
+        },
+        onError: (error) => {
+          toast.error(error.response?.data?.message);
+        },
       });
     }
   };
@@ -118,10 +129,16 @@ function AdminBlog() {
                       <Trash2 size={18} />
                     </button>
                   </div>
+
                 </div>
               </div>
             </div>
           ))
+        )}
+        {!isLoading && blogs?.data?.length === 0 && (
+          <div className="col-span-full text-center py-20 text-gray-400 font-medium">
+            {blogs?.message}
+          </div>
         )}
       </div>
 

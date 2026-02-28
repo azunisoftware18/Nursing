@@ -29,7 +29,7 @@ export async function loginService({ email, password }) {
       role: user.role,
     },
     process.env.JWT_SECRET,
-    { expiresIn: "1d" }
+    { expiresIn: "7d" }
   );
 
   return {

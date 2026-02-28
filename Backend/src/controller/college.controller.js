@@ -95,9 +95,26 @@ export const addCollege = async (req, res) => {
 export const getColleges = async (req, res) => {
   try {
     const colleges = await getAllCollegesService();
-    res.json({ success: true, data: colleges });
+
+    if (!colleges || colleges.length === 0) {
+      return res.status(200).json({
+        success: true,
+        message: "No colleges available",
+        data: [],
+      });
+    }
+
+    res.json({
+      success: true,
+      message: "Colleges fetched successfully",
+      data: colleges,
+    });
+
   } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
   }
 };
 

@@ -40,6 +40,12 @@ const Login = () => {
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-6">
+                        {/* Error Message */}
+                        {error && (
+                            <div className="bg-red-50 border border-red-200 text-red-600 text-sm px-4 py-3 rounded-xl">
+                                {error?.response?.data?.message || "Invalid email or password"}
+                            </div>
+                        )}
                         {/* Email Field */}
                         <div className="flex flex-col gap-2">
                             <label className="text-sm font-semibold text-gray-700 ml-1">Email Address</label>
@@ -47,7 +53,7 @@ const Login = () => {
                                 type="email"
                                 required
                                 className="w-full px-5 py-3 rounded-2xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-200 transition-all duration-300"
-                                placeholder="admin@nursing.com"
+                                placeholder="Email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
@@ -96,10 +102,10 @@ const Login = () => {
                 </div>
 
                 {/* Support Text (Similar style to Popular Searches) */}
-                <div className="mt-6 text-center text-[11px] text-gray-400">
+                {/* <div className="mt-6 text-center text-[11px] text-gray-400">
                     <span className="font-semibold text-gray-700">Need Help? </span>
                     <span className="hover:text-[#6739b7] cursor-pointer underline decoration-purple-100">Contact Technical Support</span>
-                </div>
+                </div> */}
             </div>
 
             {/* Reusing your Bottom Curve logic for consistency */}

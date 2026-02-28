@@ -48,7 +48,7 @@ const AdminSidebar = ({ isOpen, toggleSidebar }) => {
 
                         {isOpen && (
                             <div className="flex flex-col leading-none whitespace-nowrap animate-in fade-in slide-in-from-left-2 duration-300">
-                                <span className="text-lg font-black text-gray-800 tracking-tight">myNursing</span>
+                                <span className="text-lg font-black text-gray-800 tracking-tight">citsadmission</span>
                                 <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-0.5">Admin Panel</span>
                             </div>
                         )}

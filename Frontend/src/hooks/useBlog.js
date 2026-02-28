@@ -15,12 +15,12 @@ export const useAddBlog = () => {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: (data) => {
-      
-      return api.post("/blog", data);
+    mutationFn: async (data) => {
+      const res = await api.post("/blog", data);
+      return res.data;   
     },
     onSuccess: () => {
-      queryClient.invalidateQueries(["blogs"]);
+      queryClient.invalidateQueries({ queryKey: ["blogs"] });
     },
   });
 };
@@ -30,10 +30,11 @@ export const useDeleteBlog = () => {
 
   return useMutation({
     mutationFn: async (id) => {
-      return api.delete(`/blog/${id}`);
+      const res = await api.delete(`/blog/${id}`);
+      return res.data;   
     },
     onSuccess: () => {
-      queryClient.invalidateQueries(["blogs"]);
+      queryClient.invalidateQueries({ queryKey: ["blogs"] });
     },
   });
 };
@@ -44,10 +45,11 @@ export const useUpdateBlog = () => {
 
   return useMutation({
     mutationFn: async ({ id, data }) => {
-      return api.put(`/blog/${id}`, data);
+      const res = await api.put(`/blog/${id}`, data);
+      return res.data;  
     },
     onSuccess: () => {
-      queryClient.invalidateQueries(["blogs"]);
+      queryClient.invalidateQueries({ queryKey: ["blogs"] });
     },
   });
 };

@@ -7,16 +7,20 @@ const AdminLayout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   return (
-    <div className="flex min-h-screen bg-[#f6f7fb]">
+    <div className="flex min-h-screen bg-[#f6f7fb] relative">
+      {/* Sidebar - fixed positioning */}
+      <div className="fixed top-0 left-0 h-screen z-50">
+        <AdminSidebar
+          isOpen={isSidebarOpen}
+          toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
+        />
+      </div>
 
-      <AdminSidebar
-        isOpen={isSidebarOpen}
-        toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
-      />
-
+      {/* Main Content - with margin to account for sidebar */}
       <div
-        className={`flex-1 transition-all duration-300 ${isSidebarOpen ? "lg:ml-72" : "lg:ml-20"
-          }`}
+        className={`flex-1 min-h-screen transition-all duration-300 ${
+          isSidebarOpen ? "ml-72" : "ml-20"
+        }`}
       >
         <AdminNavbar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
         <main className="p-6">

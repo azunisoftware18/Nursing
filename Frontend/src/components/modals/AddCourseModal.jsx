@@ -62,6 +62,7 @@ function AddCourseModal({
               <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Course Name</label>
               <input
                 required
+                minLength={3}
                 placeholder="e.g. Bachelor of Technology"
                 className="w-full px-4 py-3 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:ring-2 focus:ring-[#6739b7]"
                 value={formData.name}
@@ -73,6 +74,7 @@ function AddCourseModal({
               <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Course Code</label>
               <input
                 required
+                minLength={2}
                 placeholder="BTECH-CS"
                 className="w-full px-4 py-3 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:ring-2 focus:ring-[#6739b7]"
                 value={formData.code}

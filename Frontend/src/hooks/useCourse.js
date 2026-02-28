@@ -45,10 +45,11 @@ export const useDeleteCourse = () => {
 
   return useMutation({
     mutationFn: async (id) => {
-      return api.delete(`/course/${id}`);
+      const res = await api.delete(`/course/${id}`);
+      return res.data; 
     },
     onSuccess: () => {
-      queryClient.invalidateQueries(["courses"]);
+      queryClient.invalidateQueries({ queryKey: ["courses"] });
     },
   });
 };
