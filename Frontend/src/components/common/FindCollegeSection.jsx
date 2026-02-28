@@ -25,7 +25,7 @@ const FindCollegeSection = () => {
         {/* Left Illustration - Hidden on mobile/tablet, only visible on large desktops */}
         <div className="absolute left-0 bottom-0 hidden xl:block w-72 translate-x-[-20%]">
           <img
-            src="/public/college01.png"
+            src="/college01.png"
             alt="Students working"
             className="w-full h-auto opacity-80"
           />
@@ -96,7 +96,7 @@ const FindCollegeSection = () => {
         {/* Right Illustration - Hidden on mobile/tablet */}
         <div className="absolute right-0 bottom-0 hidden xl:block w-72 translate-x-[15%]">
           <img
-            src="/public/college02.png"
+            src="/college02.png"
             alt="Student studying"
             className="w-full h-auto opacity-80"
           />
