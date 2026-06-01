@@ -52,7 +52,7 @@ function AdminCourses() {
       {/* --- RESPONSIVE HEADER --- */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
         <div>
-          <h1 className="text-xl sm:text-2xl lg:text-3xl font-black text-[#1a237e]">
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-black text-[#11B1CC]">
             Academic Courses
           </h1>
           <p className="text-sm text-gray-500 font-medium mt-1">
@@ -61,7 +61,7 @@ function AdminCourses() {
         </div>
         <button
           onClick={() => handleOpenModal()}
-          className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#6739b7] text-white px-6 py-3 rounded-xl shadow-lg hover:bg-[#5a32a3] active:scale-95 transition-all font-bold"
+          className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#11B1CC] text-white px-6 py-3 rounded-xl shadow-lg hover:bg-[#5a32a3] active:scale-95 transition-all font-bold"
         >
           <Plus size={20} /> <span>Add Course</span>
         </button>
@@ -71,7 +71,7 @@ function AdminCourses() {
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
         {isLoading ? (
           <div className="flex flex-col items-center justify-center p-20 gap-4">
-            <Loader2 className="animate-spin text-[#6739b7]" size={40} />
+            <Loader2 className="animate-spin text-[#11B1CC]" size={40} />
             <p className="text-gray-400 animate-pulse">Loading course data...</p>
           </div>
         ) : (
@@ -93,7 +93,7 @@ function AdminCourses() {
                     <tr key={course.id} className="hover:bg-indigo-50/30 transition-colors">
                       <td className="px-6 py-4">
                         <div className="flex items-center gap-3">
-                          <div className="p-2 bg-indigo-50 rounded-lg text-[#6739b7]">
+                          <div className="p-2 bg-indigo-50 rounded-lg text-[#11B1CC]">
                             <BookOpen size={18} />
                           </div>
                           <span className="font-bold text-gray-800">{course.name}</span>
@@ -164,7 +164,7 @@ function AdminCourses() {
                 <p className="text-gray-400 font-medium">
                   {courses?.message || "No courses available."}
                 </p>
-                <button onClick={() => handleOpenModal()} className="mt-4 text-[#6739b7] font-bold text-sm hover:underline">
+                <button onClick={() => handleOpenModal()} className="mt-4 text-[#11B1CC] font-bold text-sm hover:underline">
                   Click here to create your first course
                 </button>
               </div>

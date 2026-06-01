@@ -14,14 +14,14 @@ import { useMe } from "../../hooks/useUser";
 import { useDashboardStats } from "../../hooks/useDashboard";
 
 const Dashboard = () => {
-  const brandDark = "#1a237e";
+  const brandDark = "#11B1CC";
   const { data: user } = useMe();
   const { data: stats, isLoading } = useDashboardStats();
 
   if (isLoading) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-[#fbfbff]">
-        <Loader2 className="animate-spin text-[#6739b7] mb-4" size={40} />
+        <Loader2 className="animate-spin text-[#11B1CC] mb-4" size={40} />
         <p className="text-gray-500 font-medium animate-pulse">Loading stats...</p>
       </div>
     );
@@ -36,9 +36,9 @@ const Dashboard = () => {
       {/* Header Section */}
       <div className="mb-12">
         <h1 className="text-3xl md:text-4xl font-black tracking-tight" style={{ color: brandDark }}>
-          Welcome back, <span className="text-[#6739b7]">{fullName}</span>!
+          Welcome back, <span className="text-[#11B1CC]">{fullName}</span>!
         </h1>
-        <div className="h-1 w-20 bg-gradient-to-r from-[#1a237e] to-[#6739b7] mt-3 rounded-full"></div>
+        <div className="h-1 w-20 bg-gradient-to-r from-[#11B1CC] to-[#11B1CC] mt-3 rounded-full"></div>
       </div>
 
       {/* 2x2 Stats Grid */}
@@ -49,7 +49,7 @@ const Dashboard = () => {
           value={stats?.colleges || 0}
           icon={<GraduationCap size={28} />}
           bgColor="bg-indigo-50"
-          iconColor="text-[#1a237e]"
+          iconColor="text-[#11B1CC]"
           borderColor="hover:border-indigo-200"
         />
 
@@ -58,7 +58,7 @@ const Dashboard = () => {
           value={stats?.leads || 0}
           icon={<UserPlus size={28} />}
           bgColor="bg-purple-50"
-          iconColor="text-[#6739b7]"
+          iconColor="text-[#11B1CC]"
           borderColor="hover:border-purple-200"
         />
 
@@ -99,7 +99,7 @@ const StatCard = ({ title, value, icon, bgColor, iconColor, borderColor }) => (
         {title}
       </h3>
       <div className="flex items-baseline gap-2">
-        <p className="text-4xl font-black text-[#1a237e] tracking-tight">
+        <p className="text-4xl font-black text-[#11B1CC] tracking-tight">
           {value.toLocaleString()}
         </p>
         <ArrowUpRight size={18} className={`${iconColor} opacity-40 group-hover:opacity-100 transition-opacity`} />

@@ -194,12 +194,12 @@ function CollegeModal({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[150] flex items-center justify-center p-4 bg-[#1a237e]/40 backdrop-blur-md">
+    <div className="fixed inset-0 z-[150] flex items-center justify-center p-4 bg-[#11B1CC]/40 backdrop-blur-md">
       <div className="bg-white w-full max-w-5xl max-h-[95vh] rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col scale-in-animation">
         {/* Header */}
         <div className="px-10 py-6 flex justify-between items-center bg-white border-b sticky top-0 z-10">
           <div>
-            <h2 className="text-2xl font-black text-[#1a237e]">
+            <h2 className="text-2xl font-black text-[#11B1CC]">
               {editingCollege
                 ? "Update College Profile"
                 : "Register New College"}
@@ -223,7 +223,7 @@ function CollegeModal({
         >
           {/* Section 1: Basic Information */}
           <div className="space-y-6">
-            <h3 className="text-[#6739b7] font-bold text-xs uppercase tracking-widest flex items-center gap-2 border-b pb-2">
+            <h3 className="text-[#11B1CC] font-bold text-xs uppercase tracking-widest flex items-center gap-2 border-b pb-2">
               <Info size={14} /> General Information
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -273,7 +273,7 @@ function CollegeModal({
                 type="button"
                 onClick={() => handleCourseToggle(course.id)}
                 className={`px-4 py-2 rounded-xl text-xs font-bold transition-all border ${selectedCourses.includes(course.id)
-                    ? "bg-[#6739b7] text-white border-[#6739b7] shadow-lg shadow-purple-200"
+                    ? "bg-[#11B1CC] text-white border-[#11B1CC] shadow-lg shadow-purple-200"
                     : "bg-white text-gray-500 border-gray-200 hover:border-purple-300 hover:text-purple-600"
                   }`}
               >
@@ -407,7 +407,7 @@ function CollegeModal({
 
           {/* Section 5: Location */}
           <div className="space-y-6">
-            <h3 className="text-[#6739b7] font-bold text-xs uppercase tracking-widest flex items-center gap-2 border-b pb-2">
+            <h3 className="text-[#11B1CC] font-bold text-xs uppercase tracking-widest flex items-center gap-2 border-b pb-2">
               <MapPin size={14} /> Location & Address
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -481,7 +481,7 @@ function CollegeModal({
             <FieldLabel label="Facilities (Comma Separated)" />
             <div className="relative">
               <CheckSquare
-                className="absolute left-4 top-4 text-[#6739b7]"
+                className="absolute left-4 top-4 text-[#11B1CC]"
                 size={18}
               />
               <textarea
@@ -498,7 +498,7 @@ function CollegeModal({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-3">
               <FieldLabel label="Main Thumbnail" />
-              <label className="flex flex-col items-center justify-center h-48 border-2 border-dashed rounded-[2rem] cursor-pointer hover:bg-gray-50 transition-all border-[#6739b7]/20 relative overflow-hidden group">
+              <label className="flex flex-col items-center justify-center h-48 border-2 border-dashed rounded-[2rem] cursor-pointer hover:bg-gray-50 transition-all border-[#11B1CC]/20 relative overflow-hidden group">
                 {selectedThumbnail ? (
                   <div className="absolute inset-0 w-full h-full">
                     <img
@@ -512,7 +512,7 @@ function CollegeModal({
                   </div>
                 ) : (
                   <>
-                    <UploadCloud className="text-[#6739b7] mb-2" size={32} />
+                    <UploadCloud className="text-[#11B1CC] mb-2" size={32} />
                     <span className="text-xs font-bold text-gray-400">
                       Upload Cover Image
                     </span>
@@ -580,7 +580,7 @@ function CollegeModal({
             <Button
               type="submit"
               disabled={isMutating}
-              className="flex-[2] px-8 py-4 bg-[#6739b7] text-white rounded-2xl font-bold hover:bg-[#5a32a3] shadow-xl shadow-purple-200 flex items-center justify-center gap-3 disabled:opacity-70 active:scale-95 transition-all"
+              className="flex-[2] px-8 py-4 bg-[#11B1CC] text-white rounded-2xl font-bold hover:bg-[#5a32a3] shadow-xl shadow-purple-200 flex items-center justify-center gap-3 disabled:opacity-70 active:scale-95 transition-all"
             >
               {isMutating ? (
                 <Loader2 className="animate-spin" />
@@ -607,7 +607,7 @@ function CollegeModal({
           transition: all 0.2s ease;
         }
         .input-style:focus {
-          border-color: #6739b7;
+          border-color: #11B1CC;
           background-color: #fff;
           box-shadow: 0 4px 20px rgba(103, 57, 183, 0.08);
         }

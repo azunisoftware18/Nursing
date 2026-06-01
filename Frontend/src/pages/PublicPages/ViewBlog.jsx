@@ -33,7 +33,7 @@ const ViewBlog = () => {
         <div className="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
           <button
             onClick={() => navigate("/blog")}
-            className="flex items-center gap-1 text-gray-500 hover:text-[#1a237e] font-medium"
+            className="flex items-center gap-1 text-gray-500 hover:text-[#11B1CC] font-medium"
           >
             <ChevronLeft size={20} /> Back to Blogs
           </button>
@@ -56,7 +56,7 @@ const ViewBlog = () => {
           )}
 
           <div className="absolute top-6 left-6">
-            <span className="bg-[#6739b7] text-white px-4 py-1.5 rounded-full text-sm font-bold">
+            <span className="bg-[#11B1CC] text-white px-4 py-1.5 rounded-full text-sm font-bold">
               {blog.tag}
             </span>
           </div>
@@ -67,7 +67,7 @@ const ViewBlog = () => {
           {/* Meta */}
           <div className="flex gap-6 text-sm text-gray-400 mb-6">
             <div className="flex items-center gap-2">
-              <Calendar size={16} className="text-[#6739b7]" />
+              <Calendar size={16} className="text-[#11B1CC]" />
               {new Date(blog.createdAt).toLocaleDateString("en-IN", {
                 day: "numeric",
                 month: "long",
@@ -77,7 +77,7 @@ const ViewBlog = () => {
           </div>
 
           {/* Title */}
-          <h1 className="text-3xl md:text-5xl font-extrabold text-[#1a237e] mb-8">
+          <h1 className="text-3xl md:text-5xl font-extrabold text-[#11B1CC] mb-8">
             {blog.title}
           </h1>
 

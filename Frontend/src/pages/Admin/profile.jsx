@@ -17,7 +17,7 @@ import toast from "react-hot-toast";
 const ProfileInput = ({ label, icon: Icon, isEditing, ...props }) => (
   <div className="space-y-1.5">
     <label className="text-sm font-bold text-gray-700 ml-1 flex items-center gap-2">
-      {Icon && <Icon size={14} className="text-[#6739b7]" />} {label}
+      {Icon && <Icon size={14} className="text-[#11B1CC]" />} {label}
     </label>
     <input
       {...props}
@@ -87,7 +87,7 @@ const Profile = () => {
   if (isLoading || !tempData) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center text-gray-400">
-        <Loader2 className="animate-spin text-[#6739b7] mb-4" size={40} />
+        <Loader2 className="animate-spin text-[#11B1CC] mb-4" size={40} />
         <p className="font-medium animate-pulse text-indigo-900">Fetching your credentials...</p>
       </div>
     );
@@ -98,7 +98,7 @@ const Profile = () => {
       <div className="max-w-3xl mx-auto bg-white rounded-[2rem] shadow-2xl shadow-indigo-100 border border-gray-100 overflow-hidden">
 
         {/* Header Banner */}
-        <div className="h-28 bg-gradient-to-r from-[#1a237e] to-[#6739b7] flex items-center px-8 relative">
+        <div className="h-28 bg-gradient-to-r from-[#11B1CC] to-[#11B1CC] flex items-center px-8 relative">
           <div className="absolute right-0 top-0 opacity-10 p-4">
             <ShieldCheck size={100} color="white" />
           </div>
@@ -111,11 +111,11 @@ const Profile = () => {
           {/* Profile Identity Section */}
           <div className="flex flex-col sm:flex-row justify-between items-center border-b border-gray-50 pb-8 mb-8 gap-4">
             <div className="text-center sm:text-left">
-              <h2 className="text-2xl md:text-3xl font-extrabold text-[#1a237e]">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-[#11B1CC]">
                 {user.firstName} {user.lastName}
               </h2>
               <div className="flex items-center gap-2 text-gray-500 justify-center sm:justify-start mt-1">
-                <AtSign size={16} className="text-[#6739b7]" />
+                <AtSign size={16} className="text-[#11B1CC]" />
                 <span className="font-medium">{user.username}</span>
               </div>
             </div>
@@ -124,7 +124,7 @@ const Profile = () => {
               <button
                 type="button"
                 onClick={() => setIsEditing(true)}
-                className="px-8 py-2.5 bg-indigo-50 text-[#1a237e] font-bold rounded-xl hover:bg-indigo-100 transition-all active:scale-95 shadow-sm"
+                className="px-8 py-2.5 bg-indigo-50 text-[#11B1CC] font-bold rounded-xl hover:bg-indigo-100 transition-all active:scale-95 shadow-sm"
               >
                 Edit Profile
               </button>
@@ -194,7 +194,7 @@ const Profile = () => {
                 {isEditing && (
                   <div className="md:col-span-2 space-y-1.5">
                     <label className="text-sm font-bold text-gray-700 ml-1 flex items-center gap-2">
-                      <Lock size={14} className="text-[#6739b7]" />
+                      <Lock size={14} className="text-[#11B1CC]" />
                       Current Password *
                     </label>
 
@@ -213,7 +213,7 @@ const Profile = () => {
                       <button
                         type="button"
                         onClick={() => setShowCurrentPassword(!showCurrentPassword)}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#6739b7]"
+                        className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#11B1CC]"
                       >
                         {showCurrentPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                       </button>
@@ -221,7 +221,7 @@ const Profile = () => {
                   </div>
                 )}
                 <label className="text-sm font-bold text-gray-700 ml-1 flex items-center gap-2">
-                  <Lock size={14} className="text-[#6739b7]" />
+                  <Lock size={14} className="text-[#11B1CC]" />
                   {isEditing ? "New Password (Leave blank to keep current)" : "Password"}
                 </label>
                 <div className="relative">
@@ -240,7 +240,7 @@ const Profile = () => {
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#6739b7]"
+                      className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-[#11B1CC]"
                     >
                       {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                     </button>
@@ -254,7 +254,7 @@ const Profile = () => {
                 <button
                   type="submit"
                   disabled={updateMutation.isLoading}
-                  className="w-full bg-[#1a237e] hover:bg-[#283593] text-white py-4 rounded-2xl font-bold shadow-lg shadow-indigo-200 transition-all flex items-center justify-center gap-3 disabled:opacity-70 active:scale-[0.98]"
+                  className="w-full bg-[#11B1CC] hover:bg-[#283593] text-white py-4 rounded-2xl font-bold shadow-lg shadow-indigo-200 transition-all flex items-center justify-center gap-3 disabled:opacity-70 active:scale-[0.98]"
                 >
                   {updateMutation.isLoading ? (
                     <>

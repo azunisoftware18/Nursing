@@ -13,9 +13,9 @@ const Button = ({
 
   const variants = {
     primary:
-      "bg-[#6739b7] hover:bg-[#5a2e9e] text-white shadow-purple-200",
+      "bg-[#11B1CC] hover:bg-[#5a2e9e] text-white shadow-purple-200",
     outline:
-      "border-2 border-[#6739b7] text-[#6739b7] hover:bg-purple-50",
+      "border-2 border-[#11B1CC] text-[#11B1CC] hover:bg-purple-50",
   };
 
   return (

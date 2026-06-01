@@ -11,15 +11,13 @@ export const useIndiaStates = () => {
   });
 };
 
-export const useIndiaCities = (state) => {
+export const useIndiaCities = (stateCode) => {
   return useQuery({
-    queryKey: ["india-cities", state],
+    queryKey: ["india-cities", stateCode],
     queryFn: async () => {
-      const res = await api.get(
-        `/college/india/cities?state=${state}`
-      );
+      const res = await api.get(`/college/india/cities/${stateCode}`);
       return res.data;
     },
-    enabled: !!state, // 🔥 state select hone ke baad hi chale
+    enabled: !!stateCode,
   });
 };

@@ -98,7 +98,7 @@ function AdminColleges() {
     <div className="p-4 sm:p-6 bg-gray-50 min-h-screen">
       <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6 sm:mb-8 gap-4">
         <div>
-          <h1 className="text-xl sm:text-2xl font-black text-[#1a237e]">
+          <h1 className="text-xl sm:text-2xl font-black text-[#11B1CC]">
             College Directory
           </h1>
           <p className="text-xs sm:text-sm text-gray-500 font-medium">
@@ -116,13 +116,13 @@ function AdminColleges() {
               setSearchTerm(e.target.value);
               setCurrentPage(1);
             }}
-            className="px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:ring-2 focus:ring-[#6739b7] focus:border-transparent outline-none w-full sm:w-72"
+            className="px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:ring-2 focus:ring-[#11B1CC] focus:border-transparent outline-none w-full sm:w-72"
           />
 
           {/* ADD BUTTON */}
           <Button
             onClick={() => handleOpenModal()}
-            className="flex items-center justify-center gap-2 bg-[#6739b7] text-white px-5 py-2.5 rounded-xl hover:bg-[#5a32a3] transition-all shadow-lg shadow-indigo-100 font-bold w-full sm:w-auto"
+            className="flex items-center justify-center gap-2 bg-[#11B1CC] text-white px-5 py-2.5 rounded-xl hover:bg-[#5a32a3] transition-all shadow-lg shadow-indigo-100 font-bold w-full sm:w-auto"
           >
             <Plus size={20} />
             <span className="sm:inline">Add College</span>
@@ -133,7 +133,7 @@ function AdminColleges() {
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col min-h-[500px]">
         {isLoading ? (
           <div className="flex flex-col items-center justify-center p-10 sm:p-20 gap-3">
-            <Loader2 className="animate-spin text-[#6739b7]" size={32} />
+            <Loader2 className="animate-spin text-[#11B1CC]" size={32} />
             <span className="text-gray-400 font-medium text-sm sm:text-base">
               Loading colleges...
             </span>
@@ -146,7 +146,7 @@ function AdminColleges() {
                 <div key={college.id} className="p-4 border-b border-gray-100 hover:bg-gray-50/50">
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center gap-3 flex-1 min-w-0">
-                      <div className="h-12 w-12 rounded-lg bg-indigo-50 flex items-center justify-center text-[#6739b7] overflow-hidden border border-indigo-100 flex-shrink-0">
+                      <div className="h-12 w-12 rounded-lg bg-indigo-50 flex items-center justify-center text-[#11B1CC] overflow-hidden border border-indigo-100 flex-shrink-0">
                         {college.image ? (
                           <img
                             src={college.image}
@@ -238,7 +238,7 @@ function AdminColleges() {
                     >
                       <td className="px-6 py-4">
                         <div className="flex items-center gap-3">
-                          <div className="h-10 w-10 rounded-lg bg-indigo-50 flex items-center justify-center text-[#6739b7] overflow-hidden border border-indigo-100 flex-shrink-0">
+                          <div className="h-10 w-10 rounded-lg bg-indigo-50 flex items-center justify-center text-[#11B1CC] overflow-hidden border border-indigo-100 flex-shrink-0">
                             {college.image ? (
                               <img
                                 src={college.image}

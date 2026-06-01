@@ -2,8 +2,8 @@ import React from 'react';
 
 const About = () => {
   // Using a consistent brand color variable for potential future use
-  const brandColor = "#6739b7";
-  const primaryBlue = "#1a237e";
+  const brandColor = "#11B1CC";
+  const primaryBlue = "#11B1CC";
 
   return (
     <div className="bg-white min-h-screen font-sans selection:bg-purple-100">
@@ -12,10 +12,10 @@ const About = () => {
 
         {/* Main Header Section: Fluid Typography */}
         <div className="text-center mb-10 md:mb-16">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1a237e] tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#11B1CC] tracking-tight">
             About Mynursingadmission.com
           </h1>
-          <div className="h-1 w-20 bg-[#6739b7] mx-auto mt-4 rounded-full"></div>
+          <div className="h-1 w-20 bg-[#11B1CC] mx-auto mt-4 rounded-full"></div>
         </div>
 
         {/* Content Section with Image: Column on mobile, Row on Large Screens */}
@@ -37,7 +37,7 @@ const About = () => {
           <div className="w-full lg:w-3/5 space-y-5 md:space-y-6 text-gray-600 leading-relaxed text-base sm:text-lg">
             <p>
               As a subsidiary of <span className="font-bold text-gray-900">EducateMe Edu Solutions</span>,
-              <span className="font-semibold text-[#6739b7]"> mynursingadmission.com</span> has been a leading provider of guidance to students in India for the past 12 years.
+              <span className="font-semibold text-[#11B1CC]"> mynursingadmission.com</span> has been a leading provider of guidance to students in India for the past 12 years.
               We have personally assisted more than <span className="font-bold text-gray-800">5000+ students</span> in securing admissions to top colleges across the country.
             </p>
             <p>
@@ -45,8 +45,8 @@ const About = () => {
               Our platform offers comprehensive details on admission procedures, fee structures, and
               accreditation from the <span className="italic text-gray-700">Indian Nursing Council (INC), State Nursing Councils, and Universities.</span>
             </p>
-            <div className="p-4 bg-indigo-50 rounded-xl border-l-4 border-[#1a237e]">
-              <p className="text-[#1a237e] font-medium">
+            <div className="p-4 bg-indigo-50 rounded-xl border-l-4 border-[#11B1CC]">
+              <p className="text-[#11B1CC] font-medium">
                 We cater to B.Sc Nursing, GNM, Post B.Sc Nursing, and M.Sc Nursing courses,
                 striving to make your journey as simple and stress-free as possible.
               </p>
@@ -60,9 +60,9 @@ const About = () => {
           {/* Vision Card */}
           <div className="bg-white border border-gray-100 shadow-lg hover:shadow-xl rounded-2xl p-6 md:p-10 transition-all duration-300">
             <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
-              <svg className="w-6 h-6 text-[#1a237e]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="Value-Vision-Icon-Path-Here"></path></svg>
+              <svg className="w-6 h-6 text-[#11B1CC]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="Value-Vision-Icon-Path-Here"></path></svg>
             </div>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-[#1a237e] mb-4">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-[#11B1CC] mb-4">
               Our Vision
             </h2>
             <p className="text-gray-600 leading-relaxed text-base md:text-lg italic">
@@ -73,9 +73,9 @@ const About = () => {
           {/* Mission Card */}
           <div className="bg-white border border-gray-100 shadow-lg hover:shadow-xl rounded-2xl p-6 md:p-10 transition-all duration-300">
             <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
-              <svg className="w-6 h-6 text-[#6739b7]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="Value-Mission-Icon-Path-Here"></path></svg>
+              <svg className="w-6 h-6 text-[#11B1CC]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="Value-Mission-Icon-Path-Here"></path></svg>
             </div>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-[#1a237e] mb-4">
+            <h2 className="text-2xl md:text-3xl font-extrabold text-[#11B1CC] mb-4">
               Our Mission
             </h2>
             <p className="text-gray-600 leading-relaxed text-base md:text-lg">

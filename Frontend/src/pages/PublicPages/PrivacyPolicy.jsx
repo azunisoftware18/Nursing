@@ -2,7 +2,7 @@ import React from 'react';
 import { Home, ChevronRight } from 'lucide-react';
 
 const PrivacyPolicy = () => {
-  const brandDark = "#1a237e";
+  const brandDark = "#11B1CC";
 
   return (
     <div className="bg-white min-h-screen font-sans">
@@ -24,8 +24,8 @@ const PrivacyPolicy = () => {
 
             {/* Breadcrumbs */}
             <nav className="flex items-center gap-2 bg-white/95 px-4 py-2 rounded-lg text-sm w-fit shadow-sm">
-              <Home size={16} className="text-[#6739b7]" />
-              <span className="text-gray-600 hover:text-[#6739b7] cursor-pointer font-medium">Home</span>
+              <Home size={16} className="text-[#11B1CC]" />
+              <span className="text-gray-600 hover:text-[#11B1CC] cursor-pointer font-medium">Home</span>
               <ChevronRight size={14} className="text-gray-300" />
               <span className="text-gray-400 font-medium">Privacy Policy</span>
             </nav>

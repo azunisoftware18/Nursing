@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from '../../components/common/Button';
 
 function YoutubeAd() {
-  const brandColor = "#6739b7";
+  const brandColor = "#11B1CC";
   // Video play state
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -12,7 +12,7 @@ function YoutubeAd() {
 
         {/* Section Heading */}
         <div className="mb-12 text-center lg:text-left">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a237e] mb-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#11B1CC] mb-4">
             Discover Top Colleges for Nursing Admission
           </h2>
         </div>

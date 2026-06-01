@@ -4,7 +4,7 @@ import { useColleges } from "../../hooks/useCollege";
 import { Loader2 } from "lucide-react";
 
 const PopularColleges = () => {
-  const brandDark = "#1a237e";
+  const brandDark = "#11B1CC";
 
   const { data, isLoading, isError } = useColleges();
 
@@ -31,7 +31,7 @@ const PopularColleges = () => {
         {/* Loading */}
         {isLoading && (
           <div className="flex justify-center py-12">
-            <Loader2 className="h-8 w-8 animate-spin text-[#6739b7]" />
+            <Loader2 className="h-8 w-8 animate-spin text-[#11B1CC]" />
           </div>
         )}
 

@@ -5,8 +5,8 @@ import { useCourses } from '../../hooks/useCourse';
 import { Loader2 } from 'lucide-react';
 
 const PopularCourses = () => {
-  const brandPurple = "#6739b7";
-  const brandDark = "#1a237e";
+  const brandPurple = "#11B1CC";
+  const brandDark = "#11B1CC";
   const navigate = useNavigate();
   const { data, isLoading } = useCourses();
   const courses = data?.data || [];
@@ -18,17 +18,17 @@ const PopularCourses = () => {
     duration: course.duration || "",
     path: `/colleges?course=${course.id}`,
     gradient: [
-      "from-[#6739b7] to-[#1a237e]",
-      "from-[#7b4fd4] to-[#6739b7]",
-      "from-[#1a237e] to-[#4c1d95]",
-      "from-[#6739b7] via-[#5b21b6] to-[#1e1b4b]",
+      "from-[#11B1CC] to-[#11B1CC]",
+      "from-[#7b4fd4] to-[#11B1CC]",
+      "from-[#11B1CC] to-[#4c1d95]",
+      "from-[#11B1CC] via-[#5b21b6] to-[#1e1b4b]",
     ][index % 4],
   }));
 
   if (isLoading) {
     return (
       <div className="flex justify-center py-20">
-        <Loader2 className="h-8 w-8 animate-spin text-[#6739b7]" />
+        <Loader2 className="h-8 w-8 animate-spin text-[#11B1CC]" />
       </div>
     );
   }

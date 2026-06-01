@@ -7,12 +7,12 @@ import { useCourses } from "../hooks/useCourse";
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isCourseOpen, setIsCourseOpen] = useState(false); // Mobile accordion state
-  const brandColor = "#6739b7";
+  const brandColor = "#11B1CC";
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const navLinkStyles = ({ isActive }) =>
-    `font-medium transition-colors hover:text-[#6739b7] ${isActive
-      ? `text-[#6739b7] border-b-2 border-[#6739b7] pb-1 font-bold`
+    `font-medium transition-colors hover:text-[#11B1CC] ${isActive
+      ? `text-[#11B1CC] border-b-2 border-[#11B1CC] pb-1 font-bold`
       : "text-gray-600"
     }`;
 
@@ -31,13 +31,13 @@ function Header() {
             >
               <div className="relative flex items-center justify-center">
                 <span className="text-lg md:text-2xl font-bold text-gray-800">
-                  my
+                  cits
                 </span>
                 <span
                   className="text-lg md:text-2xl font-extrabold italic"
                   style={{ color: brandColor }}
                 >
-                  N
+                  A
                 </span>
                 <div
                   className="absolute -bottom-0.5 -left-0.5 w-4 h-4 md:w-5 md:h-5 border-2 rounded-full opacity-30"
@@ -46,7 +46,7 @@ function Header() {
               </div>
               <div className="flex flex-col leading-none">
                 <span className="text-sm md:text-lg font-semibold text-gray-700 tracking-tight">
-                  ursing<span style={{ color: brandColor }}>Admission</span>
+                  dmission<span style={{ color: brandColor }}></span>
                   <span className="text-[8px] md:text-[10px] text-gray-400">
                     .com
                   </span>
@@ -71,7 +71,7 @@ function Header() {
                     Courses
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 text-gray-400 group-hover:text-[#6739b7] transition-transform group-hover:rotate-180"
+                      className="h-4 w-4 text-gray-400 group-hover:text-[#11B1CC] transition-transform group-hover:rotate-180"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -96,7 +96,7 @@ function Header() {
                       <NavLink
                         key={course.id}
                         to={`/colleges?course=${course.id}`}
-                        className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-[#6739b7] transition-colors"
+                        className="block px-4 py-3 text-sm text-gray-700 hover:bg-purple-50 hover:text-[#11B1CC] transition-colors"
                       >
                         {course.name}
                       </NavLink>
@@ -139,7 +139,7 @@ function Header() {
 
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="lg:hidden p-1.5 rounded-md text-gray-600 hover:text-[#6739b7]"
+                className="lg:hidden p-1.5 rounded-md text-gray-600 hover:text-[#11B1CC]"
               >
                 <svg
                   className="h-7 w-7 md:h-8 md:w-8"
@@ -213,7 +213,7 @@ function Header() {
                           setIsOpen(false);
                           setIsCourseOpen(false);
                         }}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-[#6739b7]"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 hover:text-[#11B1CC]"
                       >
                         {course.name}
                       </NavLink>

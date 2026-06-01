@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 
 const AdminSidebar = ({ isOpen, toggleSidebar }) => {
-    const brandPurple = "#6739b7";
+    const brandPurple = "#11B1CC";
 
     const menuItems = [
         { name: 'Dashboard', path: '/admin', icon: <LayoutDashboard size={22} /> },
@@ -26,8 +26,8 @@ const AdminSidebar = ({ isOpen, toggleSidebar }) => {
 
 
     // Premium active style with a high-end "glow" effect
-    const activeStyle = "bg-purple-50 text-[#6739b7] shadow-[inset_4px_0px_0px_0px_#6739b7]";
-    const normalStyle = "text-gray-500 hover:bg-gray-50 hover:text-[#6739b7]";
+    const activeStyle = "bg-purple-50 text-[#11B1CC] shadow-[inset_4px_0px_0px_0px_#11B1CC]";
+    const normalStyle = "text-gray-500 hover:bg-gray-50 hover:text-[#11B1CC]";
 
     return (
         <>
@@ -56,7 +56,7 @@ const AdminSidebar = ({ isOpen, toggleSidebar }) => {
 
                     <button
                         onClick={toggleSidebar}
-                        className="p-1.5 rounded-lg bg-gray-50 text-gray-400 hover:bg-purple-50 hover:text-[#6739b7] transition-all border border-gray-100"
+                        className="p-1.5 rounded-lg bg-gray-50 text-gray-400 hover:bg-purple-50 hover:text-[#11B1CC] transition-all border border-gray-100"
                     >
                         <ChevronLeft size={18} className={`transition-transform duration-500 ${!isOpen && "rotate-180"}`} />
                     </button>

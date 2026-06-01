@@ -63,7 +63,7 @@ const CollegeDetails = () => {
   if (isCollegeLoading || isCoursesLoading) {
     return (
       <div className="h-screen flex items-center justify-center">
-        <div className="animate-spin h-12 w-12 border-t-4 border-[#6739b7] rounded-full" />
+        <div className="animate-spin h-12 w-12 border-t-4 border-[#11B1CC] rounded-full" />
       </div>
     );
   }
@@ -93,11 +93,11 @@ const CollegeDetails = () => {
         {/* 2. Header Info & Action Buttons */}
         <div className="mt-8 flex flex-col md:flex-row justify-between items-start gap-6 border-b pb-8">
           <div className="flex-1">
-            <h1 className="text-3xl md:text-4xl font-bold text-[#1a237e]">
+            <h1 className="text-3xl md:text-4xl font-bold text-[#11B1CC]">
               {college.name} – {college.city}
             </h1>
             <div className="flex flex-wrap gap-4 mt-2 text-sm text-gray-500 font-medium">
-              <span className="flex items-center gap-1"><MapPin size={16} className="text-[#6739b7]" /> {college.city}, {college.state}</span>
+              <span className="flex items-center gap-1"><MapPin size={16} className="text-[#11B1CC]" /> {college.city}, {college.state}</span>
             </div>
             <p className="mt-4 text-gray-600 text-sm leading-relaxed max-w-5xl italic">
               {college.description?.substring(0, 250)}...
@@ -122,13 +122,13 @@ const CollegeDetails = () => {
           {/* Main (8 Cols) */}
           <div className="lg:col-span-8 space-y-12">
             <section>
-              <h2 className="text-2xl font-bold text-[#1a237e] mb-4">About {college.name}</h2>
+              <h2 className="text-2xl font-bold text-[#11B1CC] mb-4">About {college.name}</h2>
               <p className="text-gray-600 leading-relaxed text-justify">{college.description}</p>
             </section>
 
             {/* Highlights Section */}
             <section>
-              <h2 className="text-xl font-bold text-[#1a237e] mb-6 border-b-2 border-orange-400 inline-block pb-1">
+              <h2 className="text-xl font-bold text-[#11B1CC] mb-6 border-b-2 border-orange-400 inline-block pb-1">
                 Highlights of {college.name}
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-y-3">
@@ -160,7 +160,7 @@ const CollegeDetails = () => {
 
             {/* Gallery Section */}
             <section className="border-t pt-10">
-              <h3 className="text-xl font-bold text-[#1a237e] mb-6">Gallery</h3>
+              <h3 className="text-xl font-bold text-[#11B1CC] mb-6">Gallery</h3>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {gallery.map((img, i) => (
                   <div key={i} className="h-44 rounded-lg overflow-hidden border bg-gray-50">
@@ -173,7 +173,7 @@ const CollegeDetails = () => {
             {/* --- NEW: Courses Section --- */}
             <section className="border-t pt-10 mt-10">
               <div className="flex items-center justify-between mb-8">
-                <h3 className="text-2xl font-bold text-[#1a237e] flex items-center gap-3">
+                <h3 className="text-2xl font-bold text-[#11B1CC] flex items-center gap-3">
                   <div className="p-2 bg-orange-50 rounded-lg">
                     <BookOpen className="text-orange-500" size={24} />
                   </div>
@@ -204,10 +204,10 @@ const CollegeDetails = () => {
                         title: course.name, // backend 'name' ko 'title' mein map kiya
                         displayTitle: course.name,
                         // Agar backend se gradient nahi aa raha toh default brand gradient de sakte hain
-                        gradient: course.gradient || "from-[#6739b7] to-[#1a237e]"
+                        gradient: course.gradient || "from-[#11B1CC] to-[#11B1CC]"
                       }}
-                      brandDark="#1a237e"
-                      brandPurple="#6739b7"
+                      brandDark="#11B1CC"
+                      brandPurple="#11B1CC"
                     />
                   ))}
                 </div>

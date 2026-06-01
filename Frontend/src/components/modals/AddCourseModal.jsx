@@ -49,8 +49,8 @@ function AddCourseModal({
           <X size={20} />
         </button>
 
-        <h2 className="text-xl font-black text-[#1a237e] mb-6 flex items-center gap-2">
-          <BookOpen className="text-[#6739b7]" />
+        <h2 className="text-xl font-black text-[#11B1CC] mb-6 flex items-center gap-2">
+          <BookOpen className="text-[#11B1CC]" />
           {editingCourse ? 'Edit Course' : 'New Academic Program'}
         </h2>
 
@@ -64,7 +64,7 @@ function AddCourseModal({
                 required
                 minLength={3}
                 placeholder="e.g. Bachelor of Technology"
-                className="w-full px-4 py-3 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:ring-2 focus:ring-[#6739b7]"
+                className="w-full px-4 py-3 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:ring-2 focus:ring-[#11B1CC]"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               />
@@ -76,7 +76,7 @@ function AddCourseModal({
                 required
                 minLength={2}
                 placeholder="BTECH-CS"
-                className="w-full px-4 py-3 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:ring-2 focus:ring-[#6739b7]"
+                className="w-full px-4 py-3 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:ring-2 focus:ring-[#11B1CC]"
                 value={formData.code}
                 onChange={(e) => setFormData({ ...formData, code: e.target.value })}
               />
@@ -87,7 +87,7 @@ function AddCourseModal({
               <input
                 required
                 placeholder="4 Years"
-                className="w-full px-4 py-3 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:ring-2 focus:ring-[#6739b7]"
+                className="w-full px-4 py-3 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:ring-2 focus:ring-[#11B1CC]"
                 value={formData.duration}
                 onChange={(e) => setFormData({ ...formData, duration: e.target.value })}
               />
@@ -97,7 +97,7 @@ function AddCourseModal({
               <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Eligibility Criteria</label>
               <input
                 placeholder="12th with PCM 60%"
-                className="w-full px-4 py-3 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:ring-2 focus:ring-[#6739b7]"
+                className="w-full px-4 py-3 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:ring-2 focus:ring-[#11B1CC]"
                 value={formData.eligibility}
                 onChange={(e) => setFormData({ ...formData, eligibility: e.target.value })}
               />
@@ -115,7 +115,7 @@ function AddCourseModal({
             <button
               type="submit"
               disabled={isLoading}
-              className="flex-1 px-4 py-3 bg-[#6739b7] text-white rounded-xl font-bold hover:bg-[#5a32a3] shadow-lg disabled:opacity-50 flex justify-center items-center"
+              className="flex-1 px-4 py-3 bg-[#11B1CC] text-white rounded-xl font-bold hover:bg-[#5a32a3] shadow-lg disabled:opacity-50 flex justify-center items-center"
             >
               {isLoading ? <Loader2 className="animate-spin" size={20} /> : (editingCourse ? 'Save Changes' : 'Create Course')}
             </button>

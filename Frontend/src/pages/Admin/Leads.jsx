@@ -60,7 +60,7 @@ function Leads() {
       {/* Header Section */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 sm:mb-8 gap-4">
         <div>
-          <h1 className="text-xl sm:text-2xl font-black text-[#1a237e]">Student Leads</h1>
+          <h1 className="text-xl sm:text-2xl font-black text-[#11B1CC]">Student Leads</h1>
           <p className="text-xs sm:text-sm text-gray-500 font-medium">
             Manage and track all incoming enquiries
           </p>
@@ -75,7 +75,7 @@ function Leads() {
             <input
               type="text"
               placeholder="Search leads..."
-              className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-[#6739b7] transition-all text-sm"
+              className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-[#11B1CC] transition-all text-sm"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -91,7 +91,7 @@ function Leads() {
 
         {isLoading ? (
           <div className="flex flex-col items-center justify-center p-10 sm:p-20 gap-3">
-            <Loader2 className="animate-spin text-[#6739b7]" size={32} />
+            <Loader2 className="animate-spin text-[#11B1CC]" size={32} />
             <span className="text-gray-400 font-medium text-sm sm:text-base">
               Fetching enquiries...
             </span>
@@ -122,7 +122,7 @@ function Leads() {
                   {/* Enquiry Details */}
                   <div className="bg-gray-50/50 rounded-xl p-3 mb-3">
                     <div className="flex flex-col gap-2">
-                      <span className="flex items-center gap-2 text-xs font-bold text-[#6739b7]">
+                      <span className="flex items-center gap-2 text-xs font-bold text-[#11B1CC]">
                         <BookOpen size={14} className="flex-shrink-0" />
                         <span className="truncate">{courseMap[lead.course] || "Not Specified"}</span>
                       </span>
@@ -190,7 +190,7 @@ function Leads() {
                       </td>
                       <td className="px-6 py-4">
                         <div className="flex flex-col gap-1">
-                          <span className="flex items-center gap-1.5 text-xs font-bold text-[#6739b7]">
+                          <span className="flex items-center gap-1.5 text-xs font-bold text-[#11B1CC]">
                             <BookOpen size={14} />{" "}
                             {courseMap[lead.course] || "Not Specified"}
                           </span>

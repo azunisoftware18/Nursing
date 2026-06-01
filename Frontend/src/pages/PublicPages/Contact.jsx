@@ -4,8 +4,8 @@ import ContactForm from '../../components/forms/ContactForm';
 
 const Contact = () => {
     // Project Brand Theme Colors
-    const brandColor = "#6739b7"; // PhonePe Purple
-    const brandDark = "#1a237e";  // Dark Navy for headings
+    const brandColor = "#11B1CC"; // PhonePe Purple
+    const brandDark = "#11B1CC";  // Dark Navy for headings
 
     return (
         <div className="bg-white min-h-screen font-sans">
@@ -37,7 +37,7 @@ const Contact = () => {
                         {/* Breadcrumb Navigator */}
                         <nav className="flex items-center gap-2 bg-white px-4 py-2.5 rounded-xl text-sm w-fit shadow-lg border border-purple-50">
                             <Home size={16} style={{ color: brandColor }} />
-                            <span className="text-gray-600 hover:text-[#6739b7] cursor-pointer font-bold transition-colors">Home</span>
+                            <span className="text-gray-600 hover:text-[#11B1CC] cursor-pointer font-bold transition-colors">Home</span>
                             <ChevronRight size={14} className="text-gray-300" />
                             <span className="text-gray-400 font-medium">Contact Us</span>
                         </nav>

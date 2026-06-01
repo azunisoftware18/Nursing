@@ -15,7 +15,7 @@ import { useIndiaCities, useIndiaStates } from "../../hooks/useIndia";
 import CollegeCard from "../../components/common/CollegeCard";
 
 const Colleges = () => {
-  const brandColor = "#6739b7";
+  const brandColor = "#11B1CC";
   const navigate = useNavigate();
   const [selectedState, setSelectedState] = React.useState(null);
   const [selectedCity, setSelectedCity] = React.useState(null);
@@ -89,7 +89,7 @@ const Colleges = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-8">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-sm mb-10 bg-gray-50 p-3 rounded-lg border border-gray-100">
-          <span className="font-bold cursor-pointer text-[#1a237e]">Home</span>
+          <span className="font-bold cursor-pointer text-[#11B1CC]">Home</span>
           <span className="text-gray-400">/</span>
           <span className="text-gray-500 font-medium">Colleges</span>
         </div>
@@ -125,7 +125,7 @@ const Colleges = () => {
                 }
                 className={`px-4 py-2 rounded-full text-sm font-bold border
           ${city === cityName
-                    ? "bg-[#6739b7] text-white"
+                    ? "bg-[#11B1CC] text-white"
                     : "bg-white text-gray-600"}
         `}
               >
@@ -138,14 +138,14 @@ const Colleges = () => {
           <div className="mb-6">
             <button
               onClick={() => navigate("/colleges")}
-              className="text-sm font-bold text-[#6739b7] hover:underline"
+              className="text-sm font-bold text-[#11B1CC] hover:underline"
             >
               ← Change State
             </button>
           </div>
         )}
-        <div className="mb-8 border-l-4 border-[#6739b7] pl-4">
-          <h2 className="text-2xl font-bold text-[#1a237e]">
+        <div className="mb-8 border-l-4 border-[#11B1CC] pl-4">
+          <h2 className="text-2xl font-bold text-[#11B1CC]">
             Available Nursing Colleges
           </h2>
         </div>
@@ -160,7 +160,7 @@ const Colleges = () => {
         {/* Loading */}
         {isLoading && (
           <div className="flex justify-center py-20">
-            <Loader2 className="h-10 w-10 animate-spin text-[#6739b7]" />
+            <Loader2 className="h-10 w-10 animate-spin text-[#11B1CC]" />
           </div>
         )}
 
@@ -185,7 +185,7 @@ const Colleges = () => {
             {collegesList.map((college) => (
               <CollegeCard
                 key={college.id}
-                brandDark="#1a237e"
+                brandDark="#11B1CC"
                 college={{
                   id: college.id,
                   name: college.name,

@@ -27,7 +27,7 @@ const CourseCard = ({ course, brandDark, brandPurple }) => {
       {/* Content Area */}
       <div className="p-8 flex-1 flex flex-col justify-between bg-white relative">
         <div>
-          <h4 className="text-lg font-bold mb-3 leading-tight group-hover:text-[#6739b7] transition-colors duration-300" style={{ color: brandDark }}>
+          <h4 className="text-lg font-bold mb-3 leading-tight group-hover:text-[#11B1CC] transition-colors duration-300" style={{ color: brandDark }}>
             {course.title}
           </h4>
           <p className="text-gray-400 text-xs leading-relaxed mb-6">

@@ -2,8 +2,8 @@ import React from 'react';
 import StudentReviewCard from '../../components/common/StudentReviewCard';
 
 const StudentReviews = () => {
-  const brandDark = "#1a237e";
-  const brandPurple = "#6739b7";
+  const brandDark = "#11B1CC";
+  const brandPurple = "#11B1CC";
 
   const reviews = [
     {

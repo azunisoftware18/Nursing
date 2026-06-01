@@ -1,48 +1,35 @@
-import axios from "axios";
+import { State, City } from "country-state-city";
 
 export const getIndiaStatesCities = async (req, res) => {
   try {
-    const response = await axios.post(
-      "https://countriesnow.space/api/v0.1/countries/states",
-      { country: "India" }
-    );
+    const states = State.getStatesOfCountry("IN");
 
     res.json({
       success: true,
-      data: response.data.data.states,
+      data: states,
     });
   } catch (error) {
     res.status(500).json({
       success: false,
-      message: "Failed to fetch states & cities",
+      message: "Failed to fetch states",
     });
   }
 };
 
 export const getCitiesByState = async (req, res) => {
   try {
-    const { state } = req.query;
+    const { stateCode } = req.params;
 
-    if (!state) {
-      return res.status(400).json({
-        success: false,
-        message: "State is required",
-      });
-    }
 
-    const response = await axios.post(
-      "https://countriesnow.space/api/v0.1/countries/state/cities",
-      {
-        country: "India",
-        state,
-      }
-    );
+    const cities = City.getCitiesOfState("IN", stateCode.toUpperCase());
 
     res.json({
       success: true,
-      data: response.data.data,
+      data: cities,
     });
   } catch (error) {
+    console.error(error);
+
     res.status(500).json({
       success: false,
       message: "Failed to fetch cities",

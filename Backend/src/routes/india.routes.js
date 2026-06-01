@@ -7,7 +7,5 @@ import {
 const router = Router();
 
 router.get("/states-cities", getIndiaStatesCities);
-
-router.get("/cities", getCitiesByState);
-
+router.get("/cities/:stateCode", getCitiesByState);
 export default router;

@@ -74,13 +74,13 @@ function AdminBlog() {
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
         <div>
-          <h1 className="text-2xl font-black text-[#1a237e]">Content Management</h1>
+          <h1 className="text-2xl font-black text-[#11B1CC]">Content Management</h1>
           <p className="text-sm text-gray-500 font-medium">Create and manage your portal's blog posts</p>
         </div>
         <button
           type="button"
           onClick={() => handleOpenModal()}
-          className="flex items-center gap-2 bg-[#6739b7] text-white px-5 py-2.5 rounded-xl hover:bg-[#5a32a3] transition-all shadow-lg font-bold"
+          className="flex items-center gap-2 bg-[#11B1CC] text-white px-5 py-2.5 rounded-xl hover:bg-[#5a32a3] transition-all shadow-lg font-bold"
         >
           <Plus size={20} /> Write New Post
         </button>
@@ -91,7 +91,7 @@ function AdminBlog() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {isLoading ? (
           <div className="col-span-full flex flex-col items-center justify-center p-20 gap-3">
-            <Loader2 className="animate-spin text-[#6739b7]" size={32} />
+            <Loader2 className="animate-spin text-[#11B1CC]" size={32} />
             <span className="text-gray-400 font-medium">Loading stories...</span>
           </div>
         ) : (
@@ -106,7 +106,7 @@ function AdminBlog() {
                     <ImageIcon size={48} />
                   </div>
                 )}
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-tighter text-[#1a237e]">
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-tighter text-[#11B1CC]">
                   {blog.code}
                 </div>
               </div>

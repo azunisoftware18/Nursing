@@ -5,7 +5,7 @@ import { useApply } from '../../hooks/useApply';
 import toast from 'react-hot-toast';
 
 const EnquireNow = () => {
-  const brandColor = "#6739b7";
+  const brandColor = "#11B1CC";
 
   const [phone, setPhone] = useState("");
   const { mutate, isLoading } = useApply();

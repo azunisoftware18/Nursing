@@ -7,12 +7,12 @@ import { useCourses } from '../hooks/useCourse';
 function Footer() {
   const { data } = useCourses();
   const courses = data?.data || [];
-  const brandColor = "#6739b7";
+  const brandColor = "#11B1CC";
 
   // Modal ki state control karne ke liye
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const linkStyle = "hover:text-[#6739b7] cursor-pointer transition-colors block text-left w-full bg-transparent border-none p-0";
+  const linkStyle = "hover:text-[#11B1CC] cursor-pointer transition-colors block text-left w-full bg-transparent border-none p-0";
 
   return (
     <footer className="w-full bg-white font-sans border-t border-gray-100">
@@ -29,10 +29,10 @@ function Footer() {
           {/* Column 1: Brand & Social */}
           <div className="col-span-2 lg:col-span-1 flex flex-col items-center lg:items-start text-center lg:text-left mb-4 lg:mb-0">
             <NavLink to="/" className="flex items-center gap-1 mb-6">
-              <span className="text-xl font-bold text-gray-800">my</span>
-              <span className="text-xl font-extrabold italic" style={{ color: brandColor }}>N</span>
+              <span className="text-xl font-bold text-gray-800">cits</span>
+              <span className="text-xl font-extrabold italic" style={{ color: brandColor }}>A</span>
               <span className="text-base font-semibold text-gray-700 tracking-tight">
-                ursing<span style={{ color: brandColor }}>Admission</span>
+                dmission<span style={{ color: brandColor }}></span>
               </span>
             </NavLink>
             <p className="text-gray-500 text-sm leading-relaxed mb-6 max-w-xs">
@@ -132,7 +132,7 @@ function Footer() {
                 {/* Apply Online Button jo modal open karega */}
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="font-bold text-[#6739b7] hover:opacity-80 transition-opacity cursor-pointer text-left w-full"
+                  className="font-bold text-[#11B1CC] hover:opacity-80 transition-opacity cursor-pointer text-left w-full"
                 >
                   Apply Online
                 </button>

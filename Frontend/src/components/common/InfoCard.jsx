@@ -2,7 +2,7 @@ import React from 'react';
 
 // Reusable Single Info Card Component
 const SingleInfoCard = ({ title, description, bgColor, imagePath, linkText }) => {
-  const brandBlue = "#1a237e";
+  const brandBlue = "#11B1CC";
 
   return (
     <div

@@ -4,8 +4,8 @@ import { useBlogs } from '../../hooks/useBlog';
 import { useNavigate } from 'react-router-dom';
 
 const Blog = () => {
-  const brandColor = "#6739b7";
-  const brandDark = "#1a237e";
+  const brandColor = "#11B1CC";
+  const brandDark = "#11B1CC";
   const { data, isLoading } = useBlogs();
   const navigate = useNavigate();
 
@@ -32,7 +32,7 @@ const Blog = () => {
           {/* Breadcrumbs with Lucide Icons */}
           <nav className="flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-lg border border-gray-100 text-sm">
             <Home size={16} className="text-gray-400" />
-            <span className="text-gray-600 hover:text-[#6739b7] cursor-pointer transition-colors">Home</span>
+            <span className="text-gray-600 hover:text-[#11B1CC] cursor-pointer transition-colors">Home</span>
             <ChevronRight size={14} className="text-gray-300" />
             <span className="text-gray-400">Blog</span>
           </nav>
@@ -47,7 +47,7 @@ const Blog = () => {
               key={cat.name}
               className={`px-6 py-2.5 rounded-lg font-bold transition-all border flex items-center gap-2 ${cat.active
                   ? "text-white shadow-md"
-                  : "bg-white text-gray-500 border-gray-200 hover:text-[#6739b7]"
+                  : "bg-white text-gray-500 border-gray-200 hover:text-[#11B1CC]"
                 }`}
               style={{
                 backgroundColor: cat.active ? brandColor : 'white',
@@ -87,10 +87,10 @@ const Blog = () => {
 
               {/* Content */}
               <div className="p-6 pt-2">
-                <span className="inline-block bg-purple-50 text-[#6739b7] text-xs font-bold px-3 py-1 rounded-md mb-4 uppercase tracking-wider">
+                <span className="inline-block bg-purple-50 text-[#11B1CC] text-xs font-bold px-3 py-1 rounded-md mb-4 uppercase tracking-wider">
                   {post.tag}
                 </span>
-                <h3 className="text-xl font-extrabold mb-3 leading-snug group-hover:text-[#6739b7] transition-colors" style={{ color: brandDark }}>
+                <h3 className="text-xl font-extrabold mb-3 leading-snug group-hover:text-[#11B1CC] transition-colors" style={{ color: brandDark }}>
                   {post.title}
                 </h3>
                 <p className="text-gray-400 text-sm line-clamp-2 leading-relaxed">

@@ -78,8 +78,8 @@ function ApplyNowModal({ isOpen, onClose }) {
 
 
   // Reusable Input Class
-  const inputClass = "w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#6739b7] focus:border-transparent outline-none transition-all duration-200 text-gray-800 placeholder:text-gray-400";
-  const labelClass = "text-xs font-bold text-[#1a237e] uppercase tracking-wider ml-1 mb-1 block";
+  const inputClass = "w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#11B1CC] focus:border-transparent outline-none transition-all duration-200 text-gray-800 placeholder:text-gray-400";
+  const labelClass = "text-xs font-bold text-[#11B1CC] uppercase tracking-wider ml-1 mb-1 block";
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
@@ -93,8 +93,8 @@ function ApplyNowModal({ isOpen, onClose }) {
           <button onClick={onClose} className="absolute top-4 right-6 text-gray-400 hover:text-gray-600 transition-colors">
             <X className="h-7 w-7" />
           </button>
-          <span className="bg-indigo-50 text-[#6739b7] px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.2em]">Apply Now</span>
-          <h2 className="mt-2 text-2xl font-black text-[#1a237e]">Start Your Journey</h2>
+          <span className="bg-indigo-50 text-[#11B1CC] px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.2em]">Apply Now</span>
+          <h2 className="mt-2 text-2xl font-black text-[#11B1CC]">Start Your Journey</h2>
         </div>
 
         <form className="p-8 space-y-5" onSubmit={handleSubmit}>
@@ -223,7 +223,7 @@ function ApplyNowModal({ isOpen, onClose }) {
           <Button
             type="submit"
             disabled={isLoading}
-            className="w-full py-4 rounded-2xl text-white font-bold text-lg shadow-lg shadow-indigo-200 transition-all active:scale-95 bg-[#6739b7] hover:bg-[#5a32a3]"
+            className="w-full py-4 rounded-2xl text-white font-bold text-lg shadow-lg shadow-indigo-200 transition-all active:scale-95 bg-[#11B1CC] hover:bg-[#5a32a3]"
           >
             {isLoading ? "Processing..." : "Submit Inquiry"}
           </Button>

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 const StatsCard = ({ number, label, description }) => {
-  const brandPurple = "#6739b7"; //
-  const brandDark = "#1a237e"; //
+  const brandPurple = "#11B1CC"; //
+  const brandDark = "#11B1CC"; //
 
   // State to hold the animated value
   const [displayValue, setDisplayValue] = useState(0);

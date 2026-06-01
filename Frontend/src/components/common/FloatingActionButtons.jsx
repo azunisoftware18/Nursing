@@ -28,7 +28,7 @@ const FloatingActionButtons = () => {
           {/* Right Side: Request Call Back - Ab ye Modal Open Karega */}
           <button
             onClick={() => setIsModalOpen(true)}
-            className="flex items-center gap-1.5 bg-[#1a237e] hover:bg-[#0d144d] text-white px-3 py-2.5 rounded-full shadow-lg transition-all active:scale-95 cursor-pointer border-none"
+            className="flex items-center gap-1.5 bg-[#11B1CC] hover:bg-[#0d144d] text-white px-3 py-2.5 rounded-full shadow-lg transition-all active:scale-95 cursor-pointer border-none"
           >
             <PhoneCall size={16} />
             <span className="font-bold text-xs md:text-sm">Request Call Back</span>

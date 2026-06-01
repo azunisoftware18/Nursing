@@ -5,7 +5,7 @@ import { useCollegeSearch } from '../../hooks/useCollegeSearch';
 import { useNavigate } from 'react-router-dom';
 
 const FindCollegeSection = () => {
-  const brandColor = "#6739b7";
+  const brandColor = "#11B1CC";
   const [input, setInput] = useState("");
   const navigate = useNavigate();
 
@@ -34,7 +34,7 @@ const FindCollegeSection = () => {
         {/* Center Content */}
         <div className="text-center relative z-10 max-w-4xl mx-auto">
           {/* Responsive Heading: Text size changes for mobile */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1a237e] mb-4 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#11B1CC] mb-4 leading-tight">
             Find Best <br className="sm:hidden" />
             <span
               style={{ color: brandColor, backgroundColor: `${brandColor}10` }}

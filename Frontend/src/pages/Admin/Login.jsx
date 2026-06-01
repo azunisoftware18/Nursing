@@ -6,7 +6,7 @@ import { Eye, EyeOff } from 'lucide-react';
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const brandColor = "#6739b7"; // Matching your Home.jsx theme
+    const brandColor = "#11B1CC"; // Matching your Home.jsx theme
     const { mutate, isLoading, error } = useAuth();
     const [showPassword, setShowPassword] = useState(false);
     const handleSubmit = async (e) => {
@@ -31,7 +31,7 @@ const Login = () => {
 
                     {/* Header */}
                     <div className="text-center mb-10">
-                        <h1 className="text-3xl font-extrabold text-[#1a237e] mb-2">
+                        <h1 className="text-3xl font-extrabold text-[#11B1CC] mb-2">
                             Admin <span style={{ color: brandColor }}>Portal</span>
                         </h1>
                         <p className="text-gray-500 text-sm">
@@ -74,7 +74,7 @@ const Login = () => {
                                 <button
                                     type="button"
                                     onClick={() => setShowPassword(!showPassword)}
-                                    className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-[#6739b7]"
+                                    className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-[#11B1CC]"
                                 >
                                     {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                                 </button>
@@ -96,7 +96,7 @@ const Login = () => {
                     {/* Footer Link */}
                     <div className="mt-8 text-center">
                         <p className="text-xs text-gray-400">
-                            Go back to <a href="/" className="underline hover:text-[#6739b7]">Homepage</a>
+                            Go back to <a href="/" className="underline hover:text-[#11B1CC]">Homepage</a>
                         </p>
                     </div>
                 </div>
@@ -104,7 +104,7 @@ const Login = () => {
                 {/* Support Text (Similar style to Popular Searches) */}
                 {/* <div className="mt-6 text-center text-[11px] text-gray-400">
                     <span className="font-semibold text-gray-700">Need Help? </span>
-                    <span className="hover:text-[#6739b7] cursor-pointer underline decoration-purple-100">Contact Technical Support</span>
+                    <span className="hover:text-[#11B1CC] cursor-pointer underline decoration-purple-100">Contact Technical Support</span>
                 </div> */}
             </div>
 

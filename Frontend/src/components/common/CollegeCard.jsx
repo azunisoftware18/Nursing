@@ -23,7 +23,7 @@ const CollegeCard = ({ college, brandDark }) => {
 
       {/* Content Area */}
       <div className="p-6 pt-10 flex-1 flex flex-col">
-        <h3 className="text-xl font-bold mb-3 leading-tight group-hover:text-[#6739b7] transition-colors" style={{ color: brandDark }}>
+        <h3 className="text-xl font-bold mb-3 leading-tight group-hover:text-[#11B1CC] transition-colors" style={{ color: brandDark }}>
           {college.name}
         </h3>
 
@@ -43,7 +43,7 @@ const CollegeCard = ({ college, brandDark }) => {
         </p>
         <button
           onClick={() => navigate(`/college/${college.id}`)}
-          className="mt-5 w-full bg-[#6739b7] text-white py-2.5 rounded-xl font-bold text-sm hover:opacity-90 transition"
+          className="mt-5 w-full bg-[#11B1CC] text-white py-2.5 rounded-xl font-bold text-sm hover:opacity-90 transition"
         >
           View Details
         </button>

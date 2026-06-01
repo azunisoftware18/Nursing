@@ -6,8 +6,8 @@ import { useApply } from '../../hooks/useApply';
 
 const ContactForm = () => {
     // Brand Theme Color constant
-    const brandColor = "#6739b7";
-    const brandDark = "#1a237e";
+    const brandColor = "#11B1CC";
+    const brandDark = "#11B1CC";
 
 
     const [selectedState, setSelectedState] = useState("");

@@ -27,8 +27,8 @@ function Pagination({
   };
 
   const btnBase = "h-10 w-10 flex items-center justify-center rounded-xl font-bold text-sm transition-all duration-200";
-  const activeClass = "bg-[#6739b7] text-white shadow-lg shadow-indigo-100";
-  const inactiveClass = "text-gray-500 hover:bg-gray-100 hover:text-[#1a237e]";
+  const activeClass = "bg-[#11B1CC] text-white shadow-lg shadow-indigo-100";
+  const inactiveClass = "text-gray-500 hover:bg-gray-100 hover:text-[#11B1CC]";
 
   return (
     <div className="flex items-center justify-center gap-2 py-8">
@@ -36,7 +36,7 @@ function Pagination({
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className={`${btnBase} border border-gray-100 bg-white disabled:opacity-30 disabled:cursor-not-allowed hover:border-[#6739b7]`}
+        className={`${btnBase} border border-gray-100 bg-white disabled:opacity-30 disabled:cursor-not-allowed hover:border-[#11B1CC]`}
       >
         <ChevronLeft size={18} />
       </button>
@@ -65,7 +65,7 @@ function Pagination({
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className={`${btnBase} border border-gray-100 bg-white disabled:opacity-30 disabled:cursor-not-allowed hover:border-[#6739b7]`}
+        className={`${btnBase} border border-gray-100 bg-white disabled:opacity-30 disabled:cursor-not-allowed hover:border-[#11B1CC]`}
       >
         <ChevronRight size={18} />
       </button>

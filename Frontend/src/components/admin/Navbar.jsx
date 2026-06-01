@@ -17,8 +17,8 @@ import { useNavigate } from "react-router-dom";
 
 const AdminNavbar = ({ toggleSidebar }) => {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
-  const brandPurple = "#6739b7";
-  const brandDark = "#1a237e";
+  const brandPurple = "#11B1CC";
+  const brandDark = "#11B1CC";
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleLogout = () => {
@@ -53,7 +53,7 @@ const AdminNavbar = ({ toggleSidebar }) => {
               <NavLink
                 to="/admin/profile"
                 onClick={() => setIsProfileOpen(false)}
-                className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-600 hover:bg-purple-50 hover:text-[#6739b7] transition-colors"
+                className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-600 hover:bg-purple-50 hover:text-[#11B1CC] transition-colors"
               >
                 <User size={16} /> View Profile
               </NavLink>
