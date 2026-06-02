@@ -22,14 +22,12 @@ function YoutubeAd() {
           <div className="w-full lg:w-1/2 relative group">
             <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl aspect-video bg-black">
               {!isPlaying ? (
-                /* Thumbnail Mode */
                 <div className="relative w-full h-full cursor-pointer" onClick={() => setIsPlaying(true)}>
                   <img
                     src="https://img.youtube.com/vi/wLrtvxGWW_Q/maxresdefault.jpg"
                     alt="Nursing Portal Thumbnail"
                     className="w-full h-full object-cover opacity-80 transition-transform duration-500 group-hover:scale-105"
                   />
-                  {/* Play Button Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/20 transition-colors">
                     <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
                       <svg className="w-10 h-10 text-white fill-current" viewBox="0 0 24 24">
@@ -39,18 +37,17 @@ function YoutubeAd() {
                   </div>
                 </div>
               ) : (
-                /* Embed Player Mode */
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/wLrtvxGWW_Q?autoplay=1"
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                // <iframe
+                //   className="w-full h-full"
+                //   src="/"
+                //   title="YouTube video player"
+                //   frameBorder="0"
+                //   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                //   allowFullScreen
+                // ></iframe>
+                <div></div>
               )}
             </div>
-            {/* Decorative element */}
             <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-purple-50 rounded-full -z-10"></div>
           </div>
 
