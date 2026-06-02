@@ -46,15 +46,15 @@ const FindCollegeSection = () => {
           </h2>
 
           <p className="text-gray-500 text-xs sm:text-sm md:text-base mb-8 md:mb-12 px-2">
-            Every student have unique needs, find the perfect nursing college that fit for you from 2000+ nursing colleges in India.
+            Every student have unique needs, find the perfect nursing college <br /> that fit for you from 2000+ nursing colleges in India.
           </p>
 
           {/* Search Bar Wrapper: Responsive padding and flex direction */}
           <div className="relative max-w-3xl mx-auto">
-            <div className="flex flex-col sm:flex-row items-center bg-white p-2 rounded-2xl sm:rounded-full shadow-xl border border-gray-50 gap-2 sm:gap-0">
+            <div className="flex flex-col sm:flex-row items-center mx-12 bg-white p-2 rounded-2xl sm:rounded-full shadow-xl border border-gray-50 gap-2 sm:gap-0">
 
               {/* Grid Icon & Input Wrapper */}
-              <div className="flex items-center w-full flex-1">
+              <div className="flex items-center w-full flex-1 ">
                 {/* Grid Icon - Hidden on very small screens to save space */}
                 <div className="pl-4 pr-2 text-gray-400 hidden xs:block">
                   <LayoutGrid
@@ -94,7 +94,7 @@ const FindCollegeSection = () => {
         </div>
 
         {/* Right Illustration - Hidden on mobile/tablet */}
-        <div className="absolute right-0 bottom-0 hidden xl:block w-72 translate-x-[15%]">
+        <div className="absolute right-0 bottom-0 hidden xl:block w-72 translate-x-[15%] ">
           <img
             src="/College02.png"
             alt="Student studying"
