@@ -145,7 +145,7 @@ function Footer() {
 
       {/* 3. Copyright Section */}
       <div className="border-t border-gray-100 py-8 text-center text-[10px] md:text-sm text-gray-400 px-6">
-        <p>Copyright © 2026. Mynursingadmission all right reserved</p>
+        <p>Copyright © 2026. citsadmission all right reserved</p>
       </div>
 
       {/* Modal Component ko yahan render kiya */}
