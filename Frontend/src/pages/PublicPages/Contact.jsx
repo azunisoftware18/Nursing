@@ -10,7 +10,7 @@ const Contact = () => {
     return (
         <div className="bg-white min-h-screen font-sans">
             {/* 1. Hero Banner Section */}
-            <section className="relative w-full h-[250px] md:h-[300px] overflow-hidden">
+            <section className="relative w-full h-[250px] md:h-[600px] overflow-hidden">
                 {/* Background Image with Theme Overlay */}
                 <div
                     className="absolute inset-0 bg-cover bg-center"
