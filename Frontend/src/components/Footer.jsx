@@ -1,8 +1,9 @@
-import React, { useState } from 'react'; // useState import kiya
-import { NavLink } from 'react-router-dom';
-import EnquireNow from './modals/EnquireNow';
-import ApplyNowModal from './modals/ApplyNowModal'; // ApplyNowModal import kiya
-import { useCourses } from '../hooks/useCourse';
+import React, { useState } from "react"; // useState import kiya
+import { NavLink } from "react-router-dom";
+import EnquireNow from "./modals/EnquireNow";
+import ApplyNowModal from "./modals/ApplyNowModal"; // ApplyNowModal import kiya
+import { useCourses } from "../hooks/useCourse";
+import { Facebook, Instagram, Youtube } from "lucide-react";
 
 function Footer() {
   const { data } = useCourses();
@@ -12,11 +13,17 @@ function Footer() {
   // Modal ki state control karne ke liye
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const linkStyle = "hover:text-[#11B1CC] cursor-pointer transition-colors block text-left w-full bg-transparent border-none p-0";
+  const linkStyle =
+    "hover:text-[#11B1CC] cursor-pointer transition-colors block text-left w-full bg-transparent border-none p-0";
+
+  const socials = [
+    { icon: Facebook, link: "#" },
+    { icon: Instagram, link: "#" },
+    { icon: Youtube, link: "#" },
+  ];
 
   return (
     <footer className="w-full bg-white font-sans border-t border-gray-100">
-
       {/* 1. Enquire Now Banner Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mt-10 md:mt-16 mb-12 md:mb-16">
         <EnquireNow />
@@ -25,55 +32,62 @@ function Footer() {
       {/* 2. Main Footer Links Section */}
       <div className="w-full max-w-[95%] lg:max-w-7xl mx-auto px-4 pb-12">
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-y-12 gap-x-4 md:gap-x-8">
-
           {/* Column 1: Brand & Social */}
           <div className="col-span-2 lg:col-span-1 flex flex-col items-center lg:items-start text-center lg:text-left mb-4 lg:mb-0">
             <NavLink to="/" className="flex items-center gap-1 mb-6">
               <span className="text-xl font-bold text-gray-800">cits</span>
-              <span className="text-xl font-extrabold italic" style={{ color: brandColor }}>A</span>
+              <span
+                className="text-xl font-extrabold italic"
+                style={{ color: brandColor }}
+              >
+                A
+              </span>
               <span className="text-base font-semibold text-gray-700 tracking-tight">
                 dmission<span style={{ color: brandColor }}></span>
               </span>
             </NavLink>
             <p className="text-gray-500 text-sm leading-relaxed mb-6 max-w-xs">
-              citsadmission.com is a free resource for students looking for nursing colleges in India.
+              citsadmission.com is a free resource for students looking for
+              nursing colleges in India.
             </p>
+
             <div className="flex gap-4">
-              {['facebook', 'instagram', 'youtube'].map((social) => (
-                <div key={social} className="w-9 h-9 bg-gray-50 rounded-full flex items-center justify-center hover:bg-purple-50 cursor-pointer transition-colors border border-gray-100">
-                  <div className="w-3.5 h-3.5 bg-gray-400 rounded-sm"></div>
-                </div>
-              ))}
+              {socials.map((item, index) => {
+                const Icon = item.icon;
+
+                return (
+                  <a
+                    key={index}
+                    href={item.link}
+                    className="w-10 h-10 rounded-full bg-gray-50 border border-gray-100 flex items-center justify-center hover:bg-[#11B1CC] hover:text-white transition-all duration-300 hover:scale-110"
+                  >
+                    <Icon size={18} strokeWidth={2} />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
           {/* Column 2: Quick Links */}
           <div className="flex flex-col items-start text-left">
-            <h4 className="font-bold text-gray-800 mb-6 text-sm md:text-base uppercase tracking-wider">Quick links</h4>
+            <h4 className="font-bold text-gray-800 mb-6 text-sm md:text-base uppercase tracking-wider">
+              Quick links
+            </h4>
             <ul className="space-y-4 text-xs md:text-sm text-gray-500">
               <li>
-                <NavLink
-                  to="/colleges?state=Karnataka"
-                  className={linkStyle}
-                >
+                <NavLink to="/colleges?state=Karnataka" className={linkStyle}>
                   Colleges in Karnataka
                 </NavLink>
               </li>
 
               <li>
-                <NavLink
-                  to="/colleges?state=Tamil Nadu"
-                  className={linkStyle}
-                >
+                <NavLink to="/colleges?state=Tamil Nadu" className={linkStyle}>
                   Colleges in Tamil Nadu
                 </NavLink>
               </li>
 
               <li>
-                <NavLink
-                  to="/colleges?state=Kerala"
-                  className={linkStyle}
-                >
+                <NavLink to="/colleges?state=Kerala" className={linkStyle}>
                   Colleges in Kerala
                 </NavLink>
               </li>
@@ -86,13 +100,14 @@ function Footer() {
                   Colleges in Chennai
                 </NavLink>
               </li>
-
             </ul>
           </div>
 
           {/* Column 3: Courses */}
           <div className="flex flex-col items-start text-left">
-            <h4 className="font-bold text-gray-800 mb-6 text-sm md:text-base uppercase tracking-wider">Courses</h4>
+            <h4 className="font-bold text-gray-800 mb-6 text-sm md:text-base uppercase tracking-wider">
+              Courses
+            </h4>
             <ul className="space-y-4 text-xs md:text-sm text-gray-500">
               <li>
                 <ul className="space-y-4 text-xs md:text-sm text-gray-500">
@@ -107,26 +122,44 @@ function Footer() {
                     </li>
                   ))}
                 </ul>
-
               </li>
-
             </ul>
           </div>
 
           {/* Column 4: Support */}
           <div className="flex flex-col items-start text-left">
-            <h4 className="font-bold text-gray-800 mb-6 text-sm md:text-base uppercase tracking-wider">Support</h4>
+            <h4 className="font-bold text-gray-800 mb-6 text-sm md:text-base uppercase tracking-wider">
+              Support
+            </h4>
             <ul className="space-y-4 text-xs md:text-sm text-gray-500">
-              <li><NavLink to="/about" className={linkStyle}>About Us</NavLink></li>
-              <li><NavLink to="/contact" className={linkStyle}>Contact Us</NavLink></li>
-              <li><NavLink to="/privacy-policy" className={linkStyle}>Privacy Policy</NavLink></li>
-              <li><NavLink to="/blog" className={linkStyle}>Latest Blog</NavLink></li>
+              <li>
+                <NavLink to="/about" className={linkStyle}>
+                  About Us
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/contact" className={linkStyle}>
+                  Contact Us
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/privacy-policy" className={linkStyle}>
+                  Privacy Policy
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/blog" className={linkStyle}>
+                  Latest Blog
+                </NavLink>
+              </li>
             </ul>
           </div>
 
           {/* Column 5: Admission */}
           <div className="flex flex-col items-start text-left">
-            <h4 className="font-bold text-gray-800 mb-6 text-sm md:text-base uppercase tracking-wider">Admission</h4>
+            <h4 className="font-bold text-gray-800 mb-6 text-sm md:text-base uppercase tracking-wider">
+              Admission
+            </h4>
             <ul className="space-y-4 text-xs md:text-sm text-gray-500">
               <li>
                 {/* Apply Online Button jo modal open karega */}
@@ -137,7 +170,11 @@ function Footer() {
                   Apply Online
                 </button>
               </li>
-              <li><NavLink to="/colleges" className={linkStyle}>College List</NavLink></li>
+              <li>
+                <NavLink to="/colleges" className={linkStyle}>
+                  College List
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
