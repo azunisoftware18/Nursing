@@ -11,9 +11,10 @@ function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const navLinkStyles = ({ isActive }) =>
-    `font-medium transition-colors hover:text-[#11B1CC] ${isActive
-      ? `text-[#11B1CC] border-b-2 border-[#11B1CC] pb-1 font-bold`
-      : "text-gray-600"
+    `font-medium transition-colors hover:text-[#11B1CC] ${
+      isActive
+        ? `text-[#11B1CC] border-b-2 border-[#11B1CC] pb-1 font-bold`
+        : "text-gray-600"
     }`;
 
   const { data, isLoading } = useCourses();
@@ -133,8 +134,10 @@ function Header() {
                 <span className="font-bold text-sm">755 888 1111</span>
               </div>
 
-              <Button onClick={() => setIsModalOpen(true)}>
-                <span className="whitespace-nowrap">Online Admission</span>
+              <Button className="ml-4" onClick={() => setIsModalOpen(true)}>
+                <span className="whitespace-nowrap text-xs">
+                  Online Admission
+                </span>
               </Button>
 
               <button
@@ -219,7 +222,6 @@ function Header() {
                       </NavLink>
                     ))
                   )}
-
                 </div>
               </div>
             </div>
