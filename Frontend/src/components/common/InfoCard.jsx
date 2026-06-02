@@ -33,7 +33,7 @@ const SingleInfoCard = ({ title, description, bgColor, imagePath, linkText }) =>
         {/* Action Link */}
         <a
           href="#"
-          className="text-blue-600 font-bold flex items-center justify-center md:justify-start gap-2 hover:gap-3 transition-all group"
+          className="bg-[#11B1CC] text-white w-fit py-2 px-4 rounded-xl font-bold flex items-center justify-center md:justify-start gap-2 hover:gap-3 transition-all group"
         >
           {linkText}
           <span className="text-xl transition-transform group-hover:translate-x-1">→</span>

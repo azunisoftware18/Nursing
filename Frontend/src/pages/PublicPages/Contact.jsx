@@ -10,12 +10,12 @@ const Contact = () => {
     return (
         <div className="bg-white min-h-screen font-sans">
             {/* 1. Hero Banner Section */}
-            <section className="relative w-full h-[250px] md:h-[600px] overflow-hidden">
+            <section className="relative w-full h-[250px] md:h-[700px] overflow-hidden ">
                 {/* Background Image with Theme Overlay */}
                 <div
-                    className="absolute inset-0 bg-cover bg-center"
+                    className="absolute inset-0 bg-cover bg-center "
                     style={{
-                        backgroundImage: `url('https://max-website20-images.s3.ap-south-1.amazonaws.com/Types_of_Doctors_1c5efbe677.jpg')`,
+                        backgroundImage: `url('https://img.freepik.com/premium-photo/dedicated-team-indian-doctors_895561-15568.jpg?w=996')`,
                     }}
                 >
                     {/* Overlay ko theme ke according deep blue/purple tint diya gaya hai */}
