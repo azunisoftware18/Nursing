@@ -11,28 +11,28 @@ const StudentReviews = () => {
       name: "Devika",
       role: "Nursing Student",
       image: "https://tse3.mm.bing.net/th/id/OIP.ham5NLtsM94XRA4Mu7EIWwHaEJ?pid=Api&h=220&P=0",
-      text: "I am so grateful to mynursingadmission.com for their invaluable assistance in helping me find the right nursing college for me. With their personalized guidance and detailed information about colleges, I was able to make an informed decision about my future."
+      text: "I am so grateful to citsadmission.com for their invaluable assistance in helping me find the right nursing college for me. With their personalized guidance and detailed information about colleges, I was able to make an informed decision about my future."
     },
     {
       id: 2,
       name: "Parvathi Reji",
       role: "Nursing Student",
       image: "https://tse2.mm.bing.net/th/id/OIP.1bdy4tjxPzUw960p3fJmrgHaE7?pid=Api&h=220&P=0",
-      text: "Mynursingadmission.com has been a lifesaver for me! As a student looking to pursue a career in nursing, I found it challenging to navigate through the different nursing colleges in India. However, this website provided me with comprehensive information."
+      text: "citsadmission.com has been a lifesaver for me! As a student looking to pursue a career in nursing, I found it challenging to navigate through the different nursing colleges in India. However, this website provided me with comprehensive information."
     },
     {
       id: 3,
       name: "Nimitha Sarath",
       role: "Nursing Student",
       image: "https://tse4.mm.bing.net/th/id/OIP.9DeELb_NccspMkrhAKx0MgHaHa?pid=Api&h=220&P=0",
-      text: "I am so grateful for the assistance I received from Mynursingadmission.com. Their website was easy to navigate and provided all the necessary information I needed to make an informed decision about my nursing college. The personal assistance was invaluable."
+      text: "I am so grateful for the assistance I received from citsadmission.com. Their website was easy to navigate and provided all the necessary information I needed to make an informed decision about my nursing college. The personal assistance was invaluable."
     },
     {
       id: 4,
       name: "Athulya A",
       role: "Nursing Student",
       image: "https://tse3.mm.bing.net/th/id/OIP.M3lvT_34HRk6SNJTaqPkJAHaHa?pid=Api&h=220&P=0",
-      text: "Mynursingadmission.com helped me find the perfect nursing college in India without any hassle. The website provided me with detailed information about various nursing colleges, admission procedures, and fee structure. The team ensured I got admission."
+      text: "citsadmission.com helped me find the perfect nursing college in India without any hassle. The website provided me with detailed information about various nursing colleges, admission procedures, and fee structure. The team ensured I got admission."
     }
   ];
 
@@ -45,7 +45,7 @@ const StudentReviews = () => {
           What Our Student Says
         </h2>
         <p className="text-gray-400 font-medium italic">
-          Here is our student's opinions on mynursingadmission.com
+          Here is our student's opinions on citsadmission.com
         </p>
       </div>
 

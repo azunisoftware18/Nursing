@@ -13,7 +13,7 @@ const About = () => {
         {/* Main Header Section: Fluid Typography */}
         <div className="text-center mb-10 md:mb-16">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#11B1CC] tracking-tight">
-            About Mynursingadmission.com
+            About citsadmission.com
           </h1>
           <div className="h-1 w-20 bg-[#11B1CC] mx-auto mt-4 rounded-full"></div>
         </div>
@@ -37,7 +37,7 @@ const About = () => {
           <div className="w-full lg:w-3/5 space-y-5 md:space-y-6 text-gray-600 leading-relaxed text-base sm:text-lg">
             <p>
               As a subsidiary of <span className="font-bold text-gray-900">EducateMe Edu Solutions</span>,
-              <span className="font-semibold text-[#11B1CC]"> mynursingadmission.com</span> has been a leading provider of guidance to students in India for the past 12 years.
+              <span className="font-semibold text-[#11B1CC]"> citsadmission.com</span> has been a leading provider of guidance to students in India for the past 12 years.
               We have personally assisted more than <span className="font-bold text-gray-800">5000+ students</span> in securing admissions to top colleges across the country.
             </p>
             <p>
@@ -79,7 +79,7 @@ const About = () => {
               Our Mission
             </h2>
             <p className="text-gray-600 leading-relaxed text-base md:text-lg">
-              At <span className="font-semibold text-gray-800">Mynursingadmission.com</span>, we believe nursing education is a valuable investment.
+              At <span className="font-semibold text-gray-800">citsadmission.com</span>, we believe nursing education is a valuable investment.
               Our mission is to provide free assistance and detailed resources to help students navigate the complex admission process with absolute ease.
             </p>
           </div>

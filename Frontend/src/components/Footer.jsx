@@ -36,7 +36,7 @@ function Footer() {
               </span>
             </NavLink>
             <p className="text-gray-500 text-sm leading-relaxed mb-6 max-w-xs">
-              Mynursingadmission.com is a free resource for students looking for nursing colleges in India.
+              citsadmission.com is a free resource for students looking for nursing colleges in India.
             </p>
             <div className="flex gap-4">
               {['facebook', 'instagram', 'youtube'].map((social) => (

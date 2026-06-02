@@ -19,7 +19,7 @@ const PrivacyPolicy = () => {
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
               <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-2">Privacy Policy</h1>
-              <p className="text-gray-300 font-medium italic">Privacy policy of Mynursingadmission.com</p>
+              <p className="text-gray-300 font-medium italic">Privacy policy of citsadmission.com</p>
             </div>
 
             {/* Breadcrumbs */}
@@ -54,7 +54,7 @@ const PrivacyPolicy = () => {
             <h3 className="text-xl font-bold mb-4" style={{ color: brandDark }}>Definitions</h3>
             <ul className="space-y-3 list-none p-0">
               <li><strong>Account:</strong> means a unique account created for You to access our Service.</li>
-              <li><strong>Company:</strong> refers to Mynursingadmission.com.</li>
+              <li><strong>Company:</strong> refers to citsadmission.com.</li>
               <li><strong>Cookies:</strong> are small files placed on Your computer or mobile device by a website.</li>
               <li><strong>Personal Data:</strong> is any information that relates to an identified or identifiable individual.</li>
             </ul>
@@ -77,7 +77,7 @@ const PrivacyPolicy = () => {
             <h2 className="text-3xl font-extrabold mb-6" style={{ color: brandDark }}>Contact Us</h2>
             <p className="mb-4">If you have any questions about this Privacy Policy, You can contact us:</p>
             <div className="bg-gray-50 p-6 rounded-xl border border-gray-100">
-              <p className="mb-2"><strong>By email:</strong> info@mynursingadmission.com</p>
+              <p className="mb-2"><strong>By email:</strong> info@citsadmission.com</p>
               <p><strong>By phone number:</strong> 917558881111</p>
             </div>
           </section>

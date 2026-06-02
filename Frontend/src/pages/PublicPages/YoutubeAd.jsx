@@ -61,7 +61,7 @@ function YoutubeAd() {
             </p>
 
             <p>
-              <span className="font-semibold text-gray-800">Mynursingadmission.com</span> is a useful resource that provides free assistance in searching for nursing colleges in India.
+              <span className="font-semibold text-gray-800">citsadmission.com</span> is a useful resource that provides free assistance in searching for nursing colleges in India.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
