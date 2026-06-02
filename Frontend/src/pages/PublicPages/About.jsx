@@ -26,7 +26,7 @@ const About = () => {
             <div className="relative group">
               <div className="absolute -inset-1 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
               <img
-                src="/public/doctor02.png"
+                src="/doctor02.png"
                 alt="Professional Doctor"
                 className="relative w-full max-w-xs sm:max-w-sm md:max-w-md h-auto drop-shadow-2xl rounded-3xl object-cover transform transition duration-500 hover:scale-[1.02]"
               />

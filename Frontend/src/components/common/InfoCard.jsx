@@ -53,7 +53,7 @@ const InfoCard = () => {
           title="Need Personal Admission Guidance?"
           description="We understand that each student has unique needs, and we provide personalized admission guidance to help students find the right nursing college."
           bgColor="#fff5f0"
-          imagePath="/public/Medical01.png" // Public folder se image
+          imagePath="/Medical01.png" // Public folder se image
           linkText="Find Out More"
         />
 
@@ -62,7 +62,7 @@ const InfoCard = () => {
           title="Looking for Education Loans?"
           description="Looking for financial support to kickstart your nursing education? Let us assist you in finding the funds you need through the loan process."
           bgColor="#f0f7ff"
-          imagePath="/public/Medical02.png" // Public folder se image
+          imagePath="/Medical02.png" // Public folder se image
           linkText="Find Out More"
         />
 
