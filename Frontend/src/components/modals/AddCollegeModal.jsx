@@ -179,7 +179,6 @@ function CollegeModal({
       }
     });
 
-
     if (selectedThumbnail) {
       data.append("thumbnail", selectedThumbnail);
     }
@@ -272,10 +271,11 @@ function CollegeModal({
                 key={course.id}
                 type="button"
                 onClick={() => handleCourseToggle(course.id)}
-                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all border ${selectedCourses.includes(course.id)
+                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all border ${
+                  selectedCourses.includes(course.id)
                     ? "bg-[#11B1CC] text-white border-[#11B1CC] shadow-lg shadow-purple-200"
                     : "bg-white text-gray-500 border-gray-200 hover:border-purple-300 hover:text-purple-600"
-                  }`}
+                }`}
               >
                 {course.name}
               </button>
@@ -424,9 +424,9 @@ function CollegeModal({
                 className="input-style"
               >
                 <option value="">Select State</option>
-                {states.map((s) => (
-                  <option key={s.name} value={s.name}>
-                    {s.name}
+                {states.map((state) => (
+                  <option key={state.isoCode} value={state.isoCode}>
+                    {state.name}
                   </option>
                 ))}
               </select>
@@ -437,13 +437,12 @@ function CollegeModal({
                 onChange={handleInputChange}
                 className="input-style"
               >
-
                 <option value="">
                   {loadingCities ? "Loading cities..." : "Select City"}
                 </option>
                 {cities.map((city) => (
-                  <option key={city} value={city}>
-                    {city}
+                  <option key={city.name} value={city.name}>
+                    {city.name}
                   </option>
                 ))}
               </select>
@@ -607,7 +606,7 @@ function CollegeModal({
           transition: all 0.2s ease;
         }
         .input-style:focus {
-          border-color: #11B1CC;
+          border-color: #11b1cc;
           background-color: #fff;
           box-shadow: 0 4px 20px rgba(103, 57, 183, 0.08);
         }
