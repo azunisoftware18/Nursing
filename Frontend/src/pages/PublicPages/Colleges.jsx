@@ -25,10 +25,8 @@ const Colleges = () => {
   const city = params.get("city");
   const course = params.get("course");
 
-  const {
-    data: courseColleges,
-    isLoading: loadingCourse,
-  } = useCollegesByCourse(course);
+  const { data: courseColleges, isLoading: loadingCourse } =
+    useCollegesByCourse(course);
 
   // 🔍 Search colleges
   const {
@@ -42,42 +40,34 @@ const Colleges = () => {
     city,
   });
 
-  const {
-    data: allColleges,
-    isLoading: loadingAll,
-  } = useColleges({
+  const { data: allColleges, isLoading: loadingAll } = useColleges({
     enabled: !search && !state && !city && !course,
   });
-
 
   let collegesList = [];
 
   if (course) {
     // 1️⃣ Course filter (highest priority)
     collegesList = courseColleges?.data || [];
-  }
-  else if (search || state || city) {
+  } else if (search || state || city) {
     // 2️⃣ Search / State / City
     collegesList = filteredData?.data || [];
-  }
-  else {
+  } else {
     // 3️⃣ Default all colleges
     collegesList = allColleges?.data || [];
   }
 
-
-
   const isLoading = loadingCourse || loadingFiltered || loadingAll;
-
 
   const { data: statesRes, isLoading: loadingStates } = useIndiaStates();
   const states = statesRes?.data || [];
-  const { data: citiesRes, isLoading: loadingCities } =
-    useIndiaCities(state)
+  const { data: citiesRes, isLoading: loadingCities } = useIndiaCities(state);
 
   const cities = citiesRes?.data || [];
 
-
+  console.log("state =", state);
+  console.log("city =", city);
+  console.log("filteredData =", filteredData);
   return (
     <div className="bg-white min-h-screen font-sans">
       <section className="w-full bg-[#fbf9ff] py-4 border-b border-gray-100">
@@ -99,11 +89,10 @@ const Colleges = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
             {states.map((s) => (
               <button
-                key={s.name}
+                key={s.isoCode}
                 onClick={() =>
-                  navigate(`/colleges?state=${encodeURIComponent(s.name)}`)
+                  navigate(`/colleges?state=${encodeURIComponent(s.isoCode)}`)
                 }
-                className="px-4 py-2 rounded-full text-sm font-bold border bg-white text-gray-600"
               >
                 Nursing Colleges in {s.name}
               </button>
@@ -115,21 +104,21 @@ const Colleges = () => {
 
         {state && (
           <div className="flex flex-wrap gap-3 mb-12">
-            {cities.map((cityName) => (
+            {cities.map((cityObj) => (
               <button
-                key={cityName}
+                key={cityObj.name}
                 onClick={() =>
                   navigate(
-                    `/colleges?state=${encodeURIComponent(state)}&city=${encodeURIComponent(cityName)}`
+                    `/colleges?state=${encodeURIComponent(state)}&city=${encodeURIComponent(cityObj.name)}`,
                   )
                 }
-                className={`px-4 py-2 rounded-full text-sm font-bold border
-          ${city === cityName
+                className={`px-4 py-2 rounded-full text-sm font-bold border ${
+                  city === cityObj.name
                     ? "bg-[#11B1CC] text-white"
-                    : "bg-white text-gray-600"}
-        `}
+                    : "bg-white text-gray-600"
+                }`}
               >
-                Nursing Colleges in {cityName}
+                Nursing Colleges in {cityObj.name}
               </button>
             ))}
           </div>
@@ -193,14 +182,13 @@ const Colleges = () => {
                   location: `${college.city}, ${college.state}`,
                   year: college.establishedYear || "N/A",
                   type: college.sector || "Nursing College",
-                  description: college.description || "No description available",
+                  description:
+                    college.description || "No description available",
                 }}
               />
             ))}
           </div>
         )}
-
-
       </div>
     </div>
   );
