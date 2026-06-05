@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import {
   MapPin, Calendar, GraduationCap, Building2, Info, Hash,
   CheckCircle2, Globe, ShieldCheck, UserCheck, ArrowLeft,
-  PlayCircle, Users, LayoutGrid, GraduationCap as ExperienceIcon, BookOpen
+  PlayCircle, Users, LayoutGrid, GraduationCap as ExperienceIcon, BookOpen,
+  ImageIcon
 } from "lucide-react";
 import { useCollegeById, useCollegeCourses } from "../../hooks/useCollege";
 import Button from "../../components/common/Button";
@@ -12,6 +13,7 @@ import CourseCard from "../../components/common/CoursesCard";
 const CollegeDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [bannerError, setBannerError] = useState(false);
   
   const {
     data: collegeRes,
@@ -129,15 +131,19 @@ const CollegeDetails = () => {
       {/* 1. Banner Area */}
       <div className="max-w-7xl mx-auto px-4 pt-4">
         <div className="relative h-[250px] md:h-[400px] rounded-xl overflow-hidden shadow-md">
-          <img
-            src={getThumbnailUrl()}
-            className="w-full h-full object-cover"
-            alt={college.name || "College Banner"}
-            onError={(e) => {
-              e.target.src = "/placeholder.jpg";
-              e.target.onerror = null;
-            }}
-          />
+          {!bannerError ? (
+  <img
+    src={getThumbnailUrl()}
+    className="w-full h-full object-cover"
+    alt={college.name || "College Banner"}
+    onError={() => setBannerError(true)}
+  />
+) : (
+  <div className="w-full h-full flex flex-col items-center justify-center bg-gray-100 text-gray-400">
+    <ImageIcon size={80} />
+    <span className="mt-2 text-sm">No Image Available</span>
+  </div>
+)}
         </div>
 
         {/* 2. Header Info & Action Buttons */}
@@ -230,15 +236,19 @@ const CollegeDetails = () => {
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                   {gallery.map((img, i) => (
                     <div key={i} className="h-44 rounded-lg overflow-hidden border bg-gray-50">
-                      <img 
-                        src={img.url} 
-                        className="w-full h-full object-cover" 
-                        alt={`${college.name} gallery ${i + 1}`}
-                        onError={(e) => {
-                          e.target.src = "/placeholder.jpg";
-                          e.target.onerror = null;
-                        }}
-                      />
+                      <img
+  src={img.url}
+  className="w-full h-full object-cover"
+  alt={`gallery`}
+  onError={(e) => {
+    e.target.style.display = "none";
+    e.target.parentElement.innerHTML = `
+      <div class="w-full h-full flex items-center justify-center text-gray-400">
+        📷
+      </div>
+    `;
+  }}
+/>
                     </div>
                   ))}
                 </div>

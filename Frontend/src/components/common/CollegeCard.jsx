@@ -1,25 +1,32 @@
-import React from "react";
-import { MapPin, Calendar } from "lucide-react";
+import React, { useState } from "react";
+import { MapPin, Calendar, ImageIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const CollegeCard = ({ college, brandDark }) => {
   const navigate = useNavigate();
+    const [imageError, setImageError] = useState(false);
   return (
     <div className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden flex flex-col h-full group">
       {/* Image Container with Tag */}
-      <div className="relative h-56 w-full overflow-hidden">
-        <img
-          src={college.image}
-          alt={college.name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-          onError={(e) => {
-            e.target.src = "/placeholder.jpg";
-          }}
-        />
-        <span className="absolute top-4 left-4 bg-[#5F259F] text-white text-[10px] font-bold px-3 py-1 rounded-md z-10">
-          {college.type}
-        </span>
-      </div>
+      <div className="relative h-56 w-full overflow-hidden bg-gray-100">
+  {!imageError ? (
+    <img
+      src={college.image}
+      alt={college.name}
+      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+      onError={() => setImageError(true)}
+    />
+  ) : (
+    <div className="w-full h-full flex flex-col items-center justify-center text-gray-400">
+      <ImageIcon size={50} />
+      <span className="text-xs mt-2">No Image</span>
+    </div>
+  )}
+
+  <span className="absolute top-4 left-4 bg-[#5F259F] text-white text-[10px] font-bold px-3 py-1 rounded-md z-10">
+    {college.type}
+  </span>
+</div>
 
       {/* Content Area */}
       <div className="p-6 pt-10 flex-1 flex flex-col">
