@@ -10,10 +10,9 @@ import Button from "../../components/common/Button";
 import CourseCard from "../../components/common/CoursesCard";
 
 const CollegeDetails = () => {
-
   const { id } = useParams();
   const navigate = useNavigate();
-  const baseUrl = import.meta.env.VITE_API_BASE_URL;
+  
   const {
     data: collegeRes,
     isLoading: isCollegeLoading,
@@ -28,14 +27,33 @@ const CollegeDetails = () => {
   const college = collegeRes?.data;
   const courses = courseRes?.data || [];
 
-  // Function to ensure data is an array
+  // Get the best thumbnail URL
+  const getThumbnailUrl = () => {
+    if (!college) return "/placeholder.jpg";
+    
+    // Priority: signedUrl > thumbnailUrl > first gallery image > placeholder
+    if (college.thumbnailSignedUrl) return college.thumbnailSignedUrl;
+    if (college.thumbnailUrl) return college.thumbnailUrl;
+    if (college.thumbnail) return college.thumbnail;
+    
+    // Fallback to first gallery image
+    if (college.gallery && Array.isArray(college.gallery) && college.gallery.length > 0) {
+      const firstImage = college.gallery[0];
+      if (firstImage.signedUrl) return firstImage.signedUrl;
+      if (firstImage.url) return firstImage.url;
+    }
+    
+    return "/placeholder.jpg";
+  };
+
+  // Function to ensure data is an array and handle gallery properly
   const ensureArray = (value) => {
     if (!value) return [];
 
-    // Case 1: Already array
+    // If it's already an array, return it
     if (Array.isArray(value)) return value;
 
-    // Case 2: JSON string (most common)
+    // If it's a string, try to parse it
     if (typeof value === "string") {
       try {
         const parsed = JSON.parse(value);
@@ -55,10 +73,38 @@ const CollegeDetails = () => {
     return [];
   };
 
-  const facilities = ensureArray(college?.facilities);
+  // Get gallery images with proper URLs
+  const getGalleryImages = () => {
+    if (!college?.gallery) return [];
+    
+    // If gallery is already an array of objects with url/key/signedUrl
+    if (Array.isArray(college.gallery)) {
+      return college.gallery.map(img => {
+        if (typeof img === 'object') {
+          return {
+            url: img.signedUrl || img.url,
+            key: img.key,
+          };
+        }
+        // If it's just a string
+        return { url: img };
+      });
+    }
+    
+    // If gallery is a string, parse it
+    return ensureArray(college.gallery).map(img => {
+      if (typeof img === 'object') {
+        return {
+          url: img.signedUrl || img.url,
+          key: img.key,
+        };
+      }
+      return { url: img };
+    });
+  };
 
-  const gallery = ensureArray(college?.gallery);
-  // Backend se agar courses array aa raha hai toh:
+  const facilities = ensureArray(college?.facilities);
+  const gallery = getGalleryImages();
 
   if (isCollegeLoading || isCoursesLoading) {
     return (
@@ -84,9 +130,13 @@ const CollegeDetails = () => {
       <div className="max-w-7xl mx-auto px-4 pt-4">
         <div className="relative h-[250px] md:h-[400px] rounded-xl overflow-hidden shadow-md">
           <img
-            src={college.thumbnail ? `${baseUrl}/uploads/colleges/${college.thumbnail}` : "/placeholder.jpg"}
+            src={getThumbnailUrl()}
             className="w-full h-full object-cover"
-            alt="Banner"
+            alt={college.name || "College Banner"}
+            onError={(e) => {
+              e.target.src = "/placeholder.jpg";
+              e.target.onerror = null;
+            }}
           />
         </div>
 
@@ -97,7 +147,10 @@ const CollegeDetails = () => {
               {college.name} – {college.city}
             </h1>
             <div className="flex flex-wrap gap-4 mt-2 text-sm text-gray-500 font-medium">
-              <span className="flex items-center gap-1"><MapPin size={16} className="text-[#11B1CC]" /> {college.city}, {college.state}</span>
+              <span className="flex items-center gap-1">
+                <MapPin size={16} className="text-[#11B1CC]" /> 
+                {college.city}, {college.state}
+              </span>
             </div>
             <p className="mt-4 text-gray-600 text-sm leading-relaxed max-w-5xl italic">
               {college.description?.substring(0, 250)}...
@@ -111,9 +164,21 @@ const CollegeDetails = () => {
 
         {/* 3. Central Icon Stats */}
         <div className="grid grid-cols-3 gap-4 py-12 max-w-3xl mx-auto">
-          <CenterStat icon={<Users className="text-[#5F259F]/70" size={40} />} value={`${college.studentsCount || '0'} +`} label="Students" />
-          <CenterStat icon={<ExperienceIcon className="text-[#5F259F]/70" size={40} />} value={`${college.experienceYears || '0'} `} label="Years Experience" />
-          <CenterStat icon={<LayoutGrid className="text-[#5F259F]/70" size={40} />} value={`${college.coursesCount || '0'} +`} label="Courses" />
+          <CenterStat 
+            icon={<Users className="text-[#5F259F]/70" size={40} />} 
+            value={`${college.studentsCount || '0'}+`} 
+            label="Students" 
+          />
+          <CenterStat 
+            icon={<ExperienceIcon className="text-[#5F259F]/70" size={40} />} 
+            value={`${college.experienceYears || '0'}`} 
+            label="Years Experience" 
+          />
+          <CenterStat 
+            icon={<LayoutGrid className="text-[#5F259F]/70" size={40} />} 
+            value={`${college.coursesCount || '0'}+`} 
+            label="Courses" 
+          />
         </div>
 
         {/* 4. Content Grid */}
@@ -159,18 +224,28 @@ const CollegeDetails = () => {
             )}
 
             {/* Gallery Section */}
-            <section className="border-t pt-10">
-              <h3 className="text-xl font-bold text-[#11B1CC] mb-6">Gallery</h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {gallery.map((img, i) => (
-                  <div key={i} className="h-44 rounded-lg overflow-hidden border bg-gray-50">
-                    <img src={`${baseUrl}/uploads/colleges/${img}`} className="w-full h-full object-cover" alt="college" />
-                  </div>
-                ))}
-              </div>
-            </section>
+            {gallery.length > 0 && (
+              <section className="border-t pt-10">
+                <h3 className="text-xl font-bold text-[#11B1CC] mb-6">Gallery</h3>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  {gallery.map((img, i) => (
+                    <div key={i} className="h-44 rounded-lg overflow-hidden border bg-gray-50">
+                      <img 
+                        src={img.url} 
+                        className="w-full h-full object-cover" 
+                        alt={`${college.name} gallery ${i + 1}`}
+                        onError={(e) => {
+                          e.target.src = "/placeholder.jpg";
+                          e.target.onerror = null;
+                        }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
 
-            {/* --- NEW: Courses Section --- */}
+            {/* Courses Section */}
             <section className="border-t pt-10 mt-10">
               <div className="flex items-center justify-between mb-8">
                 <h3 className="text-2xl font-bold text-[#11B1CC] flex items-center gap-3">
@@ -195,15 +270,10 @@ const CollegeDetails = () => {
                   {courses.map((course) => (
                     <CourseCard
                       key={course.id}
-                      /* Yahan hum backend data ko card ke format mein adjust kar rahe hain.
-                         Agar backend se 'name' aa raha hai aur card 'title' maang raha hai,
-                         toh hum usey aise pass karenge:
-                      */
                       course={{
                         ...course,
-                        title: course.name, // backend 'name' ko 'title' mein map kiya
+                        title: course.name,
                         displayTitle: course.name,
-                        // Agar backend se gradient nahi aa raha toh default brand gradient de sakte hain
                         gradient: course.gradient || "from-[#11B1CC] to-[#11B1CC]"
                       }}
                       brandDark="#11B1CC"
@@ -219,8 +289,6 @@ const CollegeDetails = () => {
                 </div>
               )}
             </section>
-
-
           </div>
 
           {/* Sidebar (4 Cols) */}
@@ -229,7 +297,7 @@ const CollegeDetails = () => {
               <div className="p-3 border-b bg-gray-50 font-bold text-gray-700 text-sm">Location</div>
               <div className="h-60 bg-gray-100">
                 <iframe
-                  className="w-full h-full border-0" // 'grayscale' class ko yahan se hata diya gaya hai
+                  className="w-full h-full border-0"
                   loading="lazy"
                   allowFullScreen
                   referrerPolicy="no-referrer-when-downgrade"

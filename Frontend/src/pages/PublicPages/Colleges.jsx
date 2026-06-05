@@ -178,7 +178,12 @@ const Colleges = () => {
                 college={{
                   id: college.id,
                   name: college.name,
-                  image: `${import.meta.env.VITE_API_BASE_URL}/uploads/colleges/${college.thumbnail}`,
+                  image:
+                    college.thumbnailSignedUrl ||
+                    college.thumbnailUrl ||
+                    college.gallery?.[0]?.signedUrl ||
+                    college.gallery?.[0]?.url ||
+                    "/placeholder.jpg",
                   location: `${college.city}, ${college.state}`,
                   year: college.establishedYear || "N/A",
                   type: college.sector || "Nursing College",

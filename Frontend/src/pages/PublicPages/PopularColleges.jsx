@@ -14,7 +14,6 @@ const PopularColleges = () => {
   return (
     <section className="bg-white py-16 px-6 md:px-12 font-sans">
       <div className="max-w-7xl mx-auto">
-
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2
@@ -52,11 +51,17 @@ const PopularColleges = () => {
                 college={{
                   id: college.id,
                   name: college.name,
-                  image: `${import.meta.env.VITE_API_BASE_URL}/uploads/colleges/${college.thumbnail}`,
+                  image:
+                    college.thumbnailSignedUrl ||
+                    college.thumbnailUrl ||
+                    college.gallery?.[0]?.signedUrl ||
+                    college.gallery?.[0]?.url ||
+                    "/placeholder.jpg",
                   location: `${college.city}, ${college.state}`,
                   year: college.establishedYear || "—",
                   type: college.sector || "Nursing College",
-                  description: college.description || "Top nursing college in India",
+                  description:
+                    college.description || "Top nursing college in India",
                 }}
               />
             ))}

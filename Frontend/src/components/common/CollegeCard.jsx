@@ -1,6 +1,6 @@
-import React from 'react';
-import { MapPin, Calendar } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { MapPin, Calendar } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const CollegeCard = ({ college, brandDark }) => {
   const navigate = useNavigate();
@@ -12,18 +12,21 @@ const CollegeCard = ({ college, brandDark }) => {
           src={college.image}
           alt={college.name}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          onError={(e) => {
+            e.target.src = "/placeholder.jpg";
+          }}
         />
         <span className="absolute top-4 left-4 bg-[#5F259F] text-white text-[10px] font-bold px-3 py-1 rounded-md z-10">
           {college.type}
         </span>
-
-
-
       </div>
 
       {/* Content Area */}
       <div className="p-6 pt-10 flex-1 flex flex-col">
-        <h3 className="text-xl font-bold mb-3 leading-tight group-hover:text-[#11B1CC] transition-colors" style={{ color: brandDark }}>
+        <h3
+          className="text-xl font-bold mb-3 leading-tight group-hover:text-[#11B1CC] transition-colors"
+          style={{ color: brandDark }}
+        >
           {college.name}
         </h3>
 
@@ -47,7 +50,6 @@ const CollegeCard = ({ college, brandDark }) => {
         >
           View Details
         </button>
-
       </div>
     </div>
   );
