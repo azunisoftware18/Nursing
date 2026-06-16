@@ -15,7 +15,6 @@ function AdminBlog() {
   };
 
 
-  // Data Fetching
   const { data: blogs, isLoading } = useBlogs(page, 6);
 
   // Mutations
