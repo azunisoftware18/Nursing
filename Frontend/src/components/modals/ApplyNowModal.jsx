@@ -142,7 +142,7 @@ function ApplyNowModal({ isOpen, onClose }) {
               >
                 <option value="">Select State</option>
                 {states.map((s) => (
-                  <option key={s.name} value={s.name}>
+                  <option key={s.isoCode} value={s.isoCode}>
                     {s.name}
                   </option>
                 ))}
@@ -170,8 +170,8 @@ function ApplyNowModal({ isOpen, onClose }) {
                   {formData.state ? "Select City" : "Select state first"}
                 </option>
                 {cities.map((c) => (
-                  <option key={c} value={c}>
-                    {c}
+                  <option key={c.name} value={c.name}>
+                    {c.name}
                   </option>
                 ))}
               </select>

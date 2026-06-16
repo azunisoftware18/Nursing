@@ -155,7 +155,7 @@ const ContactForm = () => {
                         >
                             <option value="">Select State</option>
                             {states.map((state) => (
-                                <option key={state.name} value={state.name}>
+                                <option key={state.isoCode} value={state.isoCode}>
                                     {state.name}
                                 </option>
                             ))}
@@ -179,8 +179,8 @@ const ContactForm = () => {
                                 {selectedState ? "Select City" : "Select state first"}
                             </option>
                             {cities.map((city) => (
-                                <option key={city} value={city}>
-                                    {city}
+                                <option key={city.name} value={city.name}>
+                                    {city.name}
                                 </option>
                             ))}
                         </select>
